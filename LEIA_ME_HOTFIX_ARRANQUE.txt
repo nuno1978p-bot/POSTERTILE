@@ -1,0 +1,18 @@
+NONIVERUS POSTERTILE v0.8.2 - HOTFIX DE ARRANQUE
+================================================
+Corrigido: token literal \n em ui/Main.qml (linha 124).
+Corrigido: titulo da janela v0.8.1 -> v0.8.2.
+Corrigido: texto de confirmacao de exportacao com \n visivel.
+Instalador: mostra pagina para escolher pasta, mantem a pasta existente por defeito.
+
+IMPORTANTE: ESTE ZIP E CODIGO-FONTE, NAO E UM EXE WINDOWS JA COMPILADO.
+1. Faz copia de seguranca do projeto C:\NONIVERUS\NONIVERUS_POSTERTILE.
+2. Extrai o conteudo completo deste ZIP para essa pasta (substituindo os ficheiros).
+   Nao substituas a pasta .venv, nem apagues projetos pessoais.
+3. Testa: .\.venv\Scripts\python.exe main.py
+4. Fecha a app e abre CONSTRUIR_SETUP_WINDOWS.cmd (duplo clique).
+5. Confirma a compilacao com sucesso; instalador novo em release\NONIVERUS_PosterTile_Setup_v0.8.2.exe
+6. Executa o instalador novo para substituir a versao anterior.
+7. Testa pelo atalho do Menu Iniciar.
+
+SEM IMPRESSORA: a montagem/calibracao fisica permanece pendente.

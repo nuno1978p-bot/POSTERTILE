@@ -1,0 +1,28 @@
+NONIVERUS PosterTile v0.8.2 - CALIBRAÇÃO POR IMPRESSORA
+
+INSTALAÇÃO:
+1) Faz backup da versão funcional v0.8.1.
+2) Descompacta o pacote para C:\NONIVERUS\NONIVERUS_POSTERTILE.
+3) Corre INICIAR_WINDOWS.bat para testar.
+4) Recompila o Setup com CONSTRUIR_SETUP_WINDOWS.cmd.
+
+COMO CALIBRAR
+- No cabeçalho da app, usa CALIBRAR.
+- Escolhe a impressora, o tamanho e orientação do papel (ex. A4 vertical).
+- Gera o PDF de calibração.
+- IMPRIME na impressora escolhida a 100% / Tamanho real. Desativa "Fit to page".
+- Mede com régua as referências X (150 mm) e Y (valor indicado na folha).
+- Regista os valores medidos em milímetros e grava o perfil.
+- Ao voltar à mesma impressora+papel, os fatores X e Y são recuperados.
+- Perfis guardados em %LOCALAPPDATA%\NONIVERUS\PosterTile\printer_profiles.json
+- Não precisas de recalibrar quando regressas a um perfil existente, desde que driver,
+  resolução, margens, formato, modo borderless e escala permaneçam os mesmos.
+- Este software gera PDF, não seleciona a impressora do programa usado para o imprimir.
+  Confirma no leitor de PDF que o equipamento escolhido coincide com o perfil.
+- Correções superiores a 3% são recusadas: normalmente indicam um modo de impressão errado.
+- A calibração NÃO garante um A3 exato em apenas duas A4 com margens não imprimíveis.
+- São necessários testes físicos e verificação de folgas/cortes antes de distribuição.
+- A função de calibração não é um sistema de licenciamento. A edição Owner e Private Preview
+  com assinatura Ed25519 e validação Rust ainda não estão incluídas nesta atualização.
+
+Estado: testes de sintaxe e PDFs efetuados fora do Windows; UI QML e impressão física pendentes.

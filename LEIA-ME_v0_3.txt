@@ -1,0 +1,55 @@
+NONIVERUS POSTERTILE v0.3 — GUIAS DE SOBREPOSICAO
+==================================================
+DESTINO: C:\NONIVERUS\NONIVERUS_POSTERTILE
+
+INSTALACAO:
+1. Fechar o PosterTile anterior.
+2. Fazer backup do postertile.py atual.
+3. Extrair o conteudo DESTA pasta ZIP diretamente para
+   C:\NONIVERUS\NONIVERUS_POSTERTILE\
+   (sem criar subpastas duplicadas).
+4. Executar INICIAR_WINDOWS.bat com Python 3 instalado.
+5. Para gerar .exe localmente: CRIAR_EXE_WINDOWS.bat.
+
+SOBREPOSICAO — EXEMPLO 10 mm
+============================
+ATENCAO: a faixa repetida de 10 mm E IMAGEM; NAO a cortes!
+
+Folha L1 C1 (canto superior esquerdo):
+ - E a folha de base. Mantem todas as areas impressas.
+Folha L1 C2 (a direita):
+ - Recorta apenas a margem BRANCA da esquerda, ate ao inicio da imagem.
+ - Coloca a faixa impressa inicial de L1 C2 por cima dos ultimos 10 mm
+   da imagem da folha L1 C1 e alinha o desenho.
+ - Cola/fixa pelo verso quando coincidir.
+Folha L2 C1 (linha de baixo):
+ - Recorta apenas a margem BRANCA superior.
+ - Sobrepoe os primeiros 10 mm impressos da folha de baixo aos ultimos
+   10 mm impressos da folha de cima.
+Folhas interiores L2 C2, etc.:
+ - Recorta a margem branca esquerda E superior.
+ - Comeca por alinhar o bordo superior e depois a esquerda.
+ - Mantem a sobreposicao de imagem; nao a removas.
+
+Linhas laranja tracejadas:
+ - Assinalam o INICIO DA IMAGEM no lado onde a folha deve
+   passar por cima da anterior; permitem cortar a margem branca.
+ - NAO assinalam o FIM da sobreposicao de 10 mm.
+Marcas azuis finas: referencia nas extremidades da zona impressa.
+
+IMPRESSAO
+=========
+- Papel A4 conforme a orientacao mostrada na app.
+- Escala 100% ou 'Tamanho real'; nunca ajustar, expandir ou encolher.
+- Desativar impressao sem margens e 'ajustar a area imprimivel'
+  se alterarem a escala.
+- Fazer teste com L1 C1 + L1 C2 e medir a faixa de 10 mm.
+- Se a impressora suprimir conteudo, aumentar margem segura.
+- A montagem manual e a impressora podem introduzir desvios.
+
+LIMITES
+=======
+Esta versao nao deteta automaticamente margens reais do equipamento.
+A v0.3 adiciona instrucoes e marcas, nao calibra a impressora.
+O PDF de teste A2 e derivado de imagem raster; a qualidade do texto
+depende da resolucao de origem.

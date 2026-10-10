@@ -1,0 +1,60 @@
+NONIVERUS POSTERTILE — v0.8.12 DEV
+======================================
+Premium Workspace · Enquadramento de imagem e paleta rápida
+
+Esta atualização deve ser utilizada EXCLUSIVAMENTE na pasta DEV.
+NÃO substitui o executável Windows estável; NÃO inclui instalador compilado.
+Base: v0.8.11 DEV, com arrastamento de texto e guias.
+
+NOVIDADES
+---------
+1. Novo bloco ENQUADRAMENTO no painel esquerdo, após o formato final:
+   - Ajustar: mostra a imagem completa, eventualmente com faixas brancas.
+   - Preencher: preenche as medidas finais, recortando ao centro.
+   - Personalizado: preenche e permite escolher o foco horizontal/vertical.
+   Não existe deformação da imagem em nenhum destes modos.
+
+2. Pré-visualização da página principal e PDF usam a mesma fórmula geométrica.
+   A imagem original não é alterada nem substituída.
+   O modo A3 em duas folhas A4 também aceita os três enquadramentos,
+   considerando a área útil de impressão definida pelo modo seguro/sem margens.
+
+3. Editor Imagem + Texto: paletas rápidas para cor da letra e do contorno.
+   Os seletores completos de cor continuam disponíveis para tons personalizados.
+
+4. Cinco traduções para os controlos novos: pt-PT / en / es / fr / it.
+5. Atualização da identificação de desenvolvimento para v0.8.12.
+
+INSTALAÇÃO DE DESENVOLVIMENTO
+----------------------------
+1. Guardar uma cópia da pasta atual DEV, especialmente antes de extrair.
+2. Extrair para C:\NONIVERUS\NONIVERUS_POSTERTILE_DEV
+3. Abrir o PowerShell e executar:
+   & "C:\NONIVERUS\NONIVERUS_POSTERTILE\.venv\Scripts\python.exe" "C:\NONIVERUS\NONIVERUS_POSTERTILE_DEV\main.py"
+
+TESTES MANUAIS RECOMENDADOS (WINDOWS)
+-------------------------------------
+- Importar uma imagem horizontal e escolher A2 vertical.
+- Ajustar: verificar a imagem completa, com margens brancas.
+- Preencher: confirmar que o recorte é central e sem deformação.
+- Personalizado: alterar focos X e Y e confirmar deslocação da zona visível.
+- Exportar PDF e comparar uma zona reconhecível com a pré-visualização.
+- Repetir o teste numa imagem vertical e numa composição Imagem + Texto.
+- Confirmar que os modos Cortar e unir / Sobrepor continuam disponíveis.
+- Repetir A3 em 2 A4 no modo seguro. O formato útil é ligeiramente
+  inferior a A3 devido às margens físicas.
+- Testar os novos nomes nos cinco idiomas e ambos os temas.
+
+VALIDAÇÃO E LIMITAÇÕES
+----------------------
+- Testes de geometria / geração de PDF por Python executados.
+- QML não foi aberto nem testado num Windows no ambiente de criação.
+- O PDF pode incluir marcas e margens de montagem não representadas na
+  pré-visualização artística do cartaz.
+- A precisão do recorte na impressora requer validação física.
+- A calibração, perfis existentes, licenciamento e lançamentos móveis
+  não são alterados por esta atualização.
+- A função de Crop/Enquadramento NUNCA aplica a escala automática
+  do driver da impressora: imprimir sempre a 100% / Tamanho real.
+
+NONIVERUS — Precision Before Promotion

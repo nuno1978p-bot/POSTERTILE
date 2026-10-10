@@ -1,0 +1,11 @@
+THIRD-PARTY SOFTWARE NOTICE (PRELIMINARY)
+The package uses Python, PySide6 / Qt, Pillow, ReportLab, and build tools
+including PyInstaller and Inno Setup.
+
+This list is informative, NOT a complete legal compliance inventory.
+Before redistribution, determine exact included versions and compile the
+license texts/attributions applicable to the bundled binaries (notably
+Qt/PySide6 LGPL obligations, and other package licenses). Check whether
+source or replacement/relinking mechanisms and additional notices are required.
+
+Do not distribute publicly until this review is complete.

@@ -1,0 +1,34 @@
+NONIVERUS PosterTile v0.8.3 - TEXT STUDIO / LANGUAGE WORK
+================================================================
+NOVO - Origem do projeto no painel esquerdo: IMAGEM | TEXTO GIGANTE.
+Texto gigante abre editor com:
+- texto e quebras de linha (max 30 / 1500 caracteres);
+- fontes instaladas no sistema local (obtidas por QFontDatabase);
+- regular / bold / italic / bold italic;
+- dimensão base e cores de texto e fundo;
+- renderização PNG nítida via Qt e paginação pelo mesmo motor PosterTile.
+- o ficheiro PNG gerado é guardado em %%LOCALAPPDATA%%\NONIVERUS\PosterTile\compositions.
+- não necessita de fontes adicionais e não embute fontes no instalador.
+- usar tamanho final (cm) na dashboard após criar.
+IMPORTANTE: A legibilidade depende da fonte e do equipamento.
+As fontes não são partilhadas nem distribuídas.
+
+IDIOMAS - Traduções adicionais das opções de formato, modos de montagem,
+estado de calibração no cabeçalho, títulos e área de origem.
+A revisão integral dos diálogos Python, mensagens de calibração e mensagens de calibração ainda está PENDENTE.
+As instruções das folhas PDF no modo normal são traduzidas para os cinco idiomas. Não considerar localização 100%% concluída.
+
+INSTALADOR: escolher pasta de destino. Compilar em Windows com:
+CONSTRUIR_SETUP_WINDOWS.cmd
+Requer Python para COMPILAR; utilizadores finais não precisam de Python.
+Versão base funcional: v0.8.2. Não distribuir sem testar Windows.
+
+TESTES A FAZER NO WINDOWS:
+1. Iniciar com python main.py (confirmar ausência de erro QML).
+2. Selecionar Texto gigante, fonte, frase, criar.
+3. Confirmar imagem gerada e dimensões em cm, exportar para PDF.
+4. Repetir com acentos e fontes diferentes, verificar PDF e marcas.
+5. Alterar os cinco idiomas e verificar as opções e modos.
+6. Recompilar EXE e Setup; arrancar do atalho Windows.
+7. Validar medidas reais com impressora física.
+PROTEÇÃO POR LICENÇA: Owner/Private Preview não implementadas neste pacote.

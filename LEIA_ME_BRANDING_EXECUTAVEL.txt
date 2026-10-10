@@ -1,0 +1,26 @@
+NONIVERUS POSTERTILE LUXURY STUDIO v0.6.4
+==========================================
+
+CONTEM
+- Motor de PDF da v0.6.3 (A4/A3/Auto, sobreposicao, escala)
+- UI QML com Midnight Sapphire / Pearl Titanium, painel com scroll
+- Identidade de aplicacao: ICO de varios tamanhos, PNG, SVG original
+- Janela e executavel com nome "NONIVERUS PosterTile"
+- Windows version_info (nome, editora, versao, descricao)
+- Script de compilacao de um EXE autonomo (PyInstaller)
+
+PARA GERAR O EXECUTAVEL WINDOWS
+1. Fazer backup de C:\NONIVERUS\NONIVERUS_POSTERTILE
+2. Extrair o ZIP por cima da pasta e permitir substituir os ficheiros
+3. Duplo clique em COMPILAR_EXECUTAVEL.cmd
+4. No fim, procurar "dist\NONIVERUS PosterTile.exe"
+5. Para testar num PC sem Python, copiar apenas o EXE e executar.
+
+AVISOS IMPORTANTES
+- Este pacote NAO traz o EXE ja compilado; a compilacao tem de decorrer num PC Windows.
+- O EXE inclui um runtime Python e bibliotecas internamente, sem exigir Python instalado no PC de destino.
+- Qt Quick e outros plugins necessitam de validacao numa maquina Windows limpa; PyInstaller pode exigir ajustes dependendo do ambiente.
+- O EXE ainda nao esta assinado digitalmente. Windows SmartScreen pode mostrar aviso de editor desconhecido.
+- A comprovacao da impressao exata exige calibracao em impressora real.
+- O icone entregue e uma variante operacional da identidade NV: para producao final deve confirmar-se correspondencia com o master vetorial da marca.
+- Guarda os originais .py/.qml para atualizacoes e evita apagar a pasta anterior ate validares a app.

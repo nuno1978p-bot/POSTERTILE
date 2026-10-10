@@ -1,0 +1,24 @@
+NONIVERUS PosterTile Luxury Studio v0.8.5 — DEVELOPMENT PREVIEW
+=============================================================
+Esta é uma linha de desenvolvimento, NÃO um instalador Windows validado.
+Preservar a v0.8.4 estável e não substituir instalações existentes.
+
+Alterações:
+- Centro NONIVERUS no cabeçalho: Definições, Ajuda e Sobre.
+- Idioma, tema, estado de calibração e ação CALIBRAR migrados para Definições.
+- Exportar PDF fixo no rodapé da barra lateral.
+- Identificação de versão atualizada.
+- Modos Imagem / Texto Gigante e motor PDF preservados.
+- Futuro modo Composição (imagem + texto) AINDA NÃO IMPLEMENTADO.
+- Licenças Owner/Private Preview AINDA NÃO IMPLEMENTADAS.
+
+Teste a partir de uma pasta SEPARADA:
+  .\.venv\Scripts\python.exe main.py
+ou, se a venv estiver na pasta estável, usar esse python com o
+caminho absoluto para o main.py de desenvolvimento.
+
+Validações nesta entrega:
+- análise de sintaxe dos ficheiros Python
+- verificação de equilíbrio estrutural de delimitadores QML
+- integridade dos ficheiros ZIP
+NÃO foram executados testes de GUI QML no Windows ou testes físicos.

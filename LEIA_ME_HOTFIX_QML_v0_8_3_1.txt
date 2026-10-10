@@ -1,0 +1,12 @@
+NONIVERUS PosterTile v0.8.3.1 — Hotfix QML
+
+Corrigidas quatro chaves de tradução no ui/Main.qml:
+  win.t("AUTO: ..."):  ->  "AUTO: ...":
+A expressão anterior era inválida como chave de objeto em QML JavaScript e
+impedia o arranque, nomeadamente na linha 15, coluna 452.
+
+Título atualizado para v0.8.3.1.
+Substituir os ficheiros na pasta de código-fonte e testar primeiro:
+  .\.venv\Scripts\python.exe main.py
+Só depois de funcionar, executar CONSTRUIR_SETUP_WINDOWS.cmd.
+Esta correção não prova nem garante a inexistência de outros erros QML.

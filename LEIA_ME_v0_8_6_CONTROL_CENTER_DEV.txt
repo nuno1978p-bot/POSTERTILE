@@ -1,0 +1,14 @@
+NONIVERUS PosterTile v0.8.6 — CONTROL CENTER / DEV
+
+Não substitui a versão estável. Extrair para C:\NONIVERUS\NONIVERUS_POSTERTILE_DEV.
+
+Alterações:
+- Control Center nativo em QML no lado direito, sem moldura e rodapé do Dialog.
+- Navegação: Definições, Impressão, Ajuda e Sobre.
+- Avisos de exportação emitidos pelo Python apresentam Popup NONIVERUS, não QMessageBox do sistema.
+- Aspeto condicionado ao tema Pearl Titanium / Midnight Sapphire.
+- Terminologia do painel localizado para pt-PT, en, es, fr e it.
+- Identificação visual v0.8.6 (DEV).
+
+Nota: calibração ainda utiliza diálogos Python; motor PDF sem alterações.
+O arranque QML e a exportação devem ser confirmados no Windows antes de qualquer instalador.

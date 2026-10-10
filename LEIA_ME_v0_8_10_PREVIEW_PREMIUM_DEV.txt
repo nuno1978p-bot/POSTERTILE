@@ -1,0 +1,15 @@
+NONIVERUS PosterTile Luxury Studio v0.8.10 DEV
+===============================================
+Atualização do Editor Imagem + Texto:
+- Editor PySide6 em 2 colunas adaptado ao tema.
+- Pré-visualização ao vivo com atualização após edição e seleção de fonte.
+- QFontComboBox lista fontes instaladas, com exemplos visuais nas respetivas fontes.
+- Posição X/Y, tamanho, cores, contorno, negrito, itálico e texto.
+- Renderização partilhada entre preview e exportação (prévia limitada a 1200 px, final até 4000 px de lado).
+- Área Sobre mantém email institucional fixo.
+- Nenhum novo EXE/instalador foi compilado.
+
+NOTA: Este pacote requer teste de arranque e edição no Windows.
+IMPORTANTE: Não substitui a versão estável instalada.
+Execução:
+& "C:\NONIVERUS\NONIVERUS_POSTERTILE\.venv\Scripts\python.exe" "C:\NONIVERUS\NONIVERUS_POSTERTILE_DEV\main.py"

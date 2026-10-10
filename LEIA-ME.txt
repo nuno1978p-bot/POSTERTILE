@@ -1,0 +1,24 @@
+NONIVERUS POSTERTILE v0.1
+Windows 10/11 - aplicação local, sem envio de imagens.
+
+INICIAR
+1. Instalar Python 3 (https://www.python.org/downloads/windows/).
+2. Executar INICIAR_WINDOWS.bat com duplo clique.
+3. Abrir imagem, selecionar A2 ou A1, gerar PDF.
+4. Imprimir todas as páginas do PDF em papel A4 a 100% / Tamanho real.
+   Desativar Ajustar ao papel, Escalar, Expandir e opções semelhantes.
+5. Cortar/alinhavar pela zona sobreposta (10 mm por defeito).
+6. Para obter um .EXE independente, executar CRIAR_EXE_WINDOWS.bat no Windows.
+   O executável aparece na pasta dist.
+
+NOTA: As impressoras possuem margens físicas mínimas, que variam por modelo.
+A app reserva uma área segura de 8 mm por defeito. Se a tua impressora
+necessitar de mais, aumenta essa margem. O PDF mantém dimensão física
+real; nenhum software consegue compensar automaticamente uma impressora
+que esteja configurada para reduzir ou ampliar o documento.
+
+A2 = 420 × 594 mm; A1 = 594 × 841 mm.
+Ajustar = imagem completa, possíveis margens brancas dentro do poster.
+Preencher = poster cheio, com corte nas extremidades da imagem.
+Correção de escala: manter 100% salvo calibração medida na impressora.
+As marcas de registo são referências auxiliares no interior da zona útil.

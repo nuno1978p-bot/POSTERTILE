@@ -1,0 +1,5 @@
+v0.6.2 — RESUMO DE ALTERAÇÕES
+ui/Main.qml: dois temas, seletor, scroll com barra, opções A3.
+main.py: QSettings para persistência, configuração A3, resumo atualizado.
+postertile_engine.py: formatos A3 e A4 no mesmo algoritmo.
+Sem alterações à gestão dos ficheiros do utilizador, aos modos de montagem ou à lógica do recorte.

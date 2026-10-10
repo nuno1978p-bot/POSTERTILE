@@ -1,0 +1,23 @@
+NONIVERUS PosterTile Luxury Studio — Avisos de produto
+Versão 0.8.0 — 2026
+
+IDENTIDADE
+NONIVERUS, PosterTile Luxury Studio, o símbolo visual e os elementos de identidade são utilizados neste produto enquanto sinais distintivos. A utilização por terceiros pode estar sujeita a autorização do respetivo titular.
+
+DIREITOS DE AUTOR
+© 2026 NONIVERUS. Reservados os direitos legalmente aplicáveis à autoria do software, dos conteúdos e da identidade visual.
+
+REGISTO DE MARCA
+Este documento não declara nem certifica qualquer registo de marca. Não utilizar o símbolo ® sem confirmar um registo válido nos territórios relevantes.
+
+DEPENDÊNCIAS
+PySide6 / Qt for Python, Pillow e ReportLab são componentes de terceiros e estão sujeitos às respetivas licenças. Antes de distribuição comercial do executável, rever os termos de utilização e disponibilizar os avisos e textos exigidos pelas respetivas licenças (incluindo LGPL, quando aplicável).
+
+PRIVACIDADE
+A aplicação processa imagens locais para produzir PDFs. Esta descrição não constitui uma auditoria integral de privacidade; verificar o comportamento do pacote de distribuição e de eventuais integrações antes de publicar.
+
+CONTACTOS E ENTIDADE LEGAL
+Preencher apenas depois de confirmar a denominação do titular, endereço de contacto, website oficial e jurisdição. Não são inventados neste pacote.
+
+DISTRIBUIÇÃO
+Recomenda-se assinatura digital do EXE, instalador com desinstalação, inventário de dependências, teste limpo sem Python e verificação de funcionamento real em Windows.

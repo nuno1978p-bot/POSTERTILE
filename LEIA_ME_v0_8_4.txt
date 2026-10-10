@@ -1,0 +1,18 @@
+NONIVERUS PosterTile v0.8.4 — Preview de estabilização
+
+Alterações:
+- Origem do projeto: botões Imagem / Texto Gigante destacam o modo realmente ativo.
+- O modo Texto mostra «Editar texto» e permite reabrir o editor.
+- Navegação do painel esquerdo reorganizada: Configuração, Origem, Formato, Papel/Impressão.
+- Traduções destas secções e de «Editar texto» para pt-PT, inglês, espanhol, francês e italiano.
+- Preparação da próxima fase: Composição de imagem + texto em camadas; NÃO IMPLEMENTADA nesta versão.
+- Identificação de versão v0.8.4 no QML, Inno Setup e scripts principais.
+
+TESTE ANTES DE COMPILAR:
+  cd C:\NONIVERUS\NONIVERUS_POSTERTILE
+  .\.venv\Scripts\python.exe main.py
+
+A seguir: CONSTRUIR_SETUP_WINDOWS.cmd
+
+Limitações: não executado em Windows neste ambiente; calibração física não validada.
+Owner/Private Preview e licenciamento ainda NÃO incluídos.

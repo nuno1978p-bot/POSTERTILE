@@ -1,0 +1,27 @@
+NONIVERUS POSTERTILE LUXURY STUDIO v0.7.0
+==========================================
+Atualização da instalação existente:
+C:\NONIVERUS\NONIVERUS_POSTERTILE
+
+1. Fecha o PosterTile e faz cópia de segurança da pasta atual.
+2. Extrai este ZIP para a pasta da aplicação.
+3. Executa INICIAR_WINDOWS.bat para testar em modo Python.
+4. Dentro da aplicação, escolhe idioma (no topo, junto aos temas).
+5. Usa SOBRE/ABOUT no cabeçalho para consultar os avisos.
+6. Para produzir um executável sem Python externo, executa COMPILAR_EXECUTAVEL.cmd.
+7. O resultado esperado é: dist\NONIVERUS PosterTile.exe
+8. Testa o EXE num PC Windows sem Python instalado.
+
+IDIOMAS DA INTERFACE PRINCIPAL:
+Português (Portugal, predefinição), inglês, espanhol, francês e italiano.
+A preferência fica guardada localmente através do QSettings.
+
+LIMITAÇÕES:
+- Os avisos e algumas mensagens internas do motor continuam em português.
+- Não foi possível executar visualmente esta versão QML em Windows neste ambiente.
+- O executável compilado não dispensa eventuais bibliotecas de sistema exigidas pelo Windows.
+- Os avisos de marca não substituem o registo de marca nem aconselhamento jurídico.
+- Rever licenças de componentes de terceiros antes de distribuição comercial.
+- Nenhum ficheiro EXE pré-compilado está incluído neste ZIP.
+
+O motor de impressão e suporte A4/A3 foram preservados.

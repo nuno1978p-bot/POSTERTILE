@@ -1,0 +1,12 @@
+NONIVERUS PosterTile Luxury Studio v0.8.1
+
+Instalação por utilizador, sem privilégios de administrador.
+A aplicação é executada localmente e pode exportar ficheiros PDF para uma pasta à sua escolha.
+A desinstalação remove os ficheiros instalados e os atalhos, mas não elimina
+projetos pessoais, imagens, PDFs exportados ou preferências do utilizador.
+
+© 2026 NONIVERUS. Os sinais distintivos e elementos de marca são reservados
+aos seus legítimos titulares. Nenhum registo de marca é aqui declarado.
+
+O executável/instalador não está assinado digitalmente nesta entrega.
+Para distribuição pública ou comercial, rever avisos legais, licenças e assinatura.

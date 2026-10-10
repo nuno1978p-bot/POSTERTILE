@@ -1,0 +1,8 @@
+NONIVERUS PosterTile Luxury Studio v0.6.3 - ajuste de escolha de papel
+- Botões A4 / A3 / AUTO visíveis sem abrir painel avançado.
+- Escolha de orientação no seletor imediatamente inferior.
+- Predefinição A4 vertical; AUTO só mediante seleção explícita.
+- Barra de scroll lateral discreta.
+- Mantém temas e opções v0.6.2.
+NOTA: a interface QML deve ser confirmada em Windows (ambiente de criação sem PySide6/QML runtime).
+Instalar: fazer backup de C:\NONIVERUS\NONIVERUS_POSTERTILE; extrair ZIP sobre essa pasta; executar INICIAR_WINDOWS.bat.

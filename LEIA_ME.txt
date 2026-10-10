@@ -1,0 +1,28 @@
+NONIVERUS PosterTile Luxury Studio v0.6.2
+=====================================
+
+DESTINO: C:\NONIVERUS\NONIVERUS_POSTERTILE
+
+NOVO:
+- Seletor de tema Midnight Sapphire / Pearl Titanium no cabeçalho.
+- Preferência persistente via QSettings do Windows (NONIVERUS/PosterTileLuxuryStudio).
+- Scroll independente com barra no painel de configuração à esquerda.
+- A4 e A3, orientação vertical/horizontal, e Auto (seleciona a menor contagem entre A4/A3).
+
+INSTALAÇÃO:
+1) Fecha a aplicação e faz cópia de segurança da pasta existente.
+2) Extrai os ficheiros deste ZIP para a pasta indicada, substituindo apenas os ficheiros homónimos.
+3) Executa INICIAR_WINDOWS.bat.
+4) Escolhe o tema no cabeçalho. Fica guardado para o próximo arranque.
+5) Em Avançado > Papel para impressão, seleciona A4/A3/orientação.
+6) Imprime o PDF sempre a 100% / Tamanho real no formato de papel indicado.
+
+ATENÇÃO:
+- Auto pode escolher A3. Só imprimir se a impressora suportar o papel escolhido.
+- Confirma manualmente as margens não imprimíveis reais da tua impressora.
+- Ainda não foi possível executar o ecrã QML num Windows real neste ambiente.
+- Esta entrega é código e scripts, não um EXE compilado.
+
+VALIDAÇÃO AUTOMÁTICA:
+- Motor A3 horizontal: PDF de teste com 4 páginas de 420x297 mm (A2 594x420).
+- Teste de plano 1784x1000 mm: 40 páginas A4 vertical, 20 A3 horizontal.

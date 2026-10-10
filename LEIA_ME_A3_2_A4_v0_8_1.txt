@@ -1,0 +1,58 @@
+NONIVERUS PosterTile Luxury Studio - v0.8.1
+A3 EM DUAS FOLHAS A4 | INSTRUCOES PT-PT
+===============================================
+
+NOVIDADE
+- Selecionar em FORMATO FINAL:
+    A3 horizontal (2 A4) -> 2 folhas A4 verticais, lado a lado.
+    A3 vertical (2 A4)   -> 2 folhas A4 horizontais, uma sobre a outra.
+- Selecionar uma das duas modalidades de impressão na secção PAPEL.
+
+MODO 1: COM MARGENS (PREDEFINIDO)
+- Funciona com uma impressora A4 comum (sem borderless).
+- O software distribui a imagem entre as zonas imprimiveis das duas folhas.
+- Usa, por defeito, 8 mm de margem em todos os lados.
+- Depois de imprimir a 100%, cortar a margem DIREITA da primeira folha e
+  a margem ESQUERDA da segunda folha (A3 horizontal). Na versao vertical,
+  cortar a margem INFERIOR da folha superior e a SUPERIOR da inferior.
+- Encostar os limites impressos; alinhar a continuidade da imagem e colar
+  no verso. Nao ha sobreposicao neste modo.
+- O conjunto de papel, DEPOIS de recortado, e ligeiramente menor que A3.
+  Com 8 mm: 404 x 297 mm (horizontal) ou 297 x 404 mm (vertical).
+- A imagem propriamente dita tambem fica menor. A area maxima imprimivel
+  e 388 x 281 mm (horizontal) ou 281 x 388 mm (vertical). As proporcoes
+  da imagem sao mantidas, logo uma dimensao pode ficar ainda menor.
+
+MODO 2: SEM MARGENS (A3 EXATO)
+- Apenas para impressoras que suportem A4 SEM MARGENS (borderless).
+- O PDF ocupa a pagina A4 ate as extremidades, sem faixas de seguranca.
+- Imprimir as duas folhas a 100% / tamanho real, sem "Ajustar a pagina".
+- Juntar por encosto as arestas (sem sobreposicao).
+- Obtens A3 nominal: 420 x 297 mm ou 297 x 420 mm.
+- Se a impressora expandir/cortar automaticamente no modo sem margens,
+  pode haver perda de imagem junto a costura. Testar primeiro uma grelha.
+- Sem borderless, nao e fisicamente possivel preencher um A3 exato com
+  imagem continua, a 100%, usando apenas duas folhas A4 normais.
+
+ALTERNATIVA A3 EXATO COM MARGENS NORMAIS
+- Selecionar "A3 horizontal" ou "A3 vertical" (SEM "2 A4").
+- Em PAPEL DE IMPRESSAO, escolher A4 e um metodo de montagem.
+- A app utiliza as folhas A4 adicionais necessarias para atingir a
+  dimensao definida, usando margens e sobreposicao.
+
+IMPRESSAO E MONTAGEM
+- Nao escolher "Ajustar", "Encolher paginas grandes", ou escalas
+  automaticas. Verificar no leitor PDF o tamanho fisico A4.
+- O modo seguro pede cortes apenas nas margens interiores; os limites
+  impressos deverao coincidir. Para papel grosso, usar fita-cola por tras.
+- Antes de imprimir imagens importantes: verificar uma barra de 100 mm.
+
+INSTALADOR WINDOWS
+- Executar CONSTRUIR_SETUP_WINDOWS.cmd dentro da pasta do projeto.
+- Com Inno Setup 6 em D:\Program Files (x86)\Inno Setup 6.
+- Resultado esperado: release\NONIVERUS_PosterTile_Setup_v0.8.1.exe.
+- O executavel integra Python / PySide6; no PC destino nao e necessario
+  instalar Python separadamente.
+- Instalar a nova versao depois de copiar os dados e fazer backup.
+- Ainda nao foi compilado nem testado num Windows real nesta entrega.
+

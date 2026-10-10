@@ -1,0 +1,37 @@
+﻿# Python
+.venv/
+venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+*.pyo
+
+# Compilacao Windows
+build/
+dist/
+release/
+*.exe
+
+# Backups e arquivos antigos
+backups/
+NONIVERUS_POSTERTILE/
+*.bak
+*.log
+*.zip
+
+# Documentos gerados
+*.pdf
+
+# Configuracoes locais
+.env
+.env.*
+printer_profiles.json
+
+# Licencas, chaves e dados privados
+licenses/
+secrets/
+*.pem
+*.key
+*.pfx
+*.p12
+*.token

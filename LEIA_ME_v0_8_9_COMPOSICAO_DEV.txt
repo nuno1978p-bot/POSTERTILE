@@ -1,0 +1,25 @@
+NONIVERUS PosterTile v0.8.9 DEV — IMAGEM + TEXTO
+
+INSTALACAO:
+1. Preservar a versao estavel instalada, e fazer backup da pasta DEV.
+2. Extrair na pasta C:\NONIVERUS\NONIVERUS_POSTERTILE_DEV.
+3. Executar:
+   & "C:\NONIVERUS\NONIVERUS_POSTERTILE\.venv\Scripts\python.exe" "C:\NONIVERUS\NONIVERUS_POSTERTILE_DEV\main.py"
+4. Nao compilar o instalador ate verificar o arranque no Windows.
+
+FUNCIONALIDADES:
+- Terceiro modo: IMAGEM + TEXTO.
+- Selecionar imagem de fundo e escrever um bloco de texto (ate 5 linhas).
+- Fonte instalada no Windows, cor, contorno, negrito, tamanho e posicao horizontal/vertical.
+- «EDITAR COMPOSICAO» reabre a configuracao.
+- O preview e a exportacao usam o MESMO PNG de composicao.
+- A dimensao do cartaz mantem-se em centimetros e a paginacao A4/A3 permanece inalterada.
+- Sobre: email institucional fixo contact@noniverus.com; sem campo editavel/botao guardar.
+
+LIMITACOES HONESTAS:
+- V0.8.9 e uma versao DEV. Sem arrasto direto da camada no canvas, nem multiplas camadas.
+- O texto e rasterizado em PNG ate 4000 px na maior dimensao; para tamanhos gigantes
+  esta implementacao nao oferece a mesma nitidez de texto vetorial.
+- Ainda nao testado no Windows/Qt Quick nem em impressora fisica.
+- O sistema atual de calibracao e sobreposicao continua dependente dos testes fisicos.
+

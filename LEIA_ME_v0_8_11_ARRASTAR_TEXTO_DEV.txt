@@ -1,0 +1,52 @@
+NONIVERUS POSTERTILE LUXURY STUDIO
+v0.8.11 DEV  •  Composition Studio / Direct Manipulation
+=========================================================
+
+NOVO NESTA VERSÃO
+- Mover o texto da composição diretamente com o rato na pré-visualização.
+- Caixa de seleção e quatro marcadores visuais.
+- Guias centrais discretas, opcionais (checkbox «Guias»).
+- Encaixe magnético no centro X e Y a uma distância de 9 px.
+- Botão «Centrar» para colocar o texto em X=50%, Y=50%.
+- Campos X/Y sincronizados em ambos os sentidos.
+- Guia de utilização em português, inglês, espanhol, francês e italiano.
+- Geometria correta em imagens verticais, horizontais e com barras vazias (letterbox).
+- As marcas/linhas são desenhadas APENAS na pré-visualização.
+- O PDF continua a utilizar a composição sem guias e sem seleção.
+
+COMO TESTAR NO WINDOWS SEM INSTALAR EXE
+1. Descomprimir para C:\NONIVERUS\NONIVERUS_POSTERTILE_DEV
+2. Manter intocada a cópia instalada do PosterTile.
+3. Executar no PowerShell:
+   & "C:\NONIVERUS\NONIVERUS_POSTERTILE\.venv\Scripts\python.exe" "C:\NONIVERUS\NONIVERUS_POSTERTILE_DEV\main.py"
+4. Escolher IMAGEM + TEXTO > EDITAR COMPOSIÇÃO.
+5. Clicar sobre as letras, arrastar sobre a imagem e observar as coordenadas X/Y.
+6. Aproximar o centro e confirmar as guias e o encaixe X=50%/Y=50%.
+7. Clicar «Aplicar composição», exportar PDF e observar se a seleção não é impressa.
+8. Testar uma imagem vertical e outra horizontal.
+
+VALIDAÇÃO REALIZADA
+- Sintaxe de todos os ficheiros .py validada.
+- Testes unitários de mapeamento de coordenadas, letterboxing e encaixe ao centro.
+- QML principal não mudou além das referências de versão.
+- Verificada consistência das referências de versão e da configuração de compilação.
+- NÃO foi possível executar/validar visualmente a versão PySide6 no Windows.
+- NÃO foi realizada impressão física nesta atualização.
+
+LIMITES INTENCIONAIS
+- Apenas 1 bloco de texto nesta fase.
+- A pré-visualização usa imagem reduzida; composição final até 4000 px por lado.
+- O texto ainda é rasterizado na exportação; não é vetor.
+- O encaixe central é calculado pela âncora percentual da composição.
+- As pegas são indicativas nesta fase: o redimensionamento permanece no painel.
+- O posicionamento dentro do diálogo só é gravado ao clicar «Aplicar composição».
+- A versão Owner / Private Preview protegida ainda não foi implementada.
+
+Fonte/Imagem:
+As fontes são escolhidas entre as instaladas no Windows e não são distribuídas.
+O ficheiro base permanece em disco e a composição é guardada na área LOCALAPPDATA.
+
+ASSISTÊNCIA TÉCNICA
+NONIVERUS · contact@noniverus.com
+
+--- FIM ---

@@ -1,0 +1,14 @@
+NONIVERUS PosterTile Luxury Studio v0.8.7 — DEV
+
+Nova secção SOBRE no Control Center:
+- Logótipo NONIVERUS, identificação, versão DEV e tecnologia.
+- Contacto oficial configurável (não foi inventado endereço de email).
+- Validação básica do endereço e armazenamento local via QSettings, em branding/support_email.
+- Localização da secção Sobre em pt-PT, en, es, fr e it.
+- Motor de impressão inalterado.
+
+TESTE WINDOWS (sem instalar):
+& "C:\NONIVERUS\NONIVERUS_POSTERTILE\.venv\Scripts\python.exe" "C:\NONIVERUS\NONIVERUS_POSTERTILE_DEV\main.py"
+
+Atenção: esta versão DEV não foi executada em QML no Windows nesta preparação.
+Não distribuir. Não substituir a versão estável.

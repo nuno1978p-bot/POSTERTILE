@@ -1,0 +1,13 @@
+﻿NONIVERUS PosterTile - Correcao deteccao do Inno Setup no disco D:
+
+1. Extrai estes CMD na RAIZ da pasta do projeto de compilacao v0.8.0,
+   ao lado de main.py, installer\, dist\ e CONSTRUIR_SETUP_WINDOWS.cmd.
+2. Se ja existe dist\NONIVERUS PosterTile\NONIVERUS PosterTile.exe:
+   executa COMPILAR_SO_SETUP.cmd (nao recompila o Python).
+3. Se ainda nao existe, executa CONSTRUIR_SETUP_WINDOWS.cmd.
+4. A compilacao do instalador requer o ficheiro:
+   D:\Program Files (x86)\Inno Setup 6\ISCC.exe
+5. Em caso de erro com COMPILAR_SO_SETUP.cmd envia release\inno-build.log.
+
+Este pacote nao contem o executavel de instalacao; contem a correcao
+dos scripts de compilacao.

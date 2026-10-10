@@ -1,0 +1,40 @@
+NONIVERUS POSTERTILE LUXURY STUDIO v0.8.0
+PACOTE DE FONTE + CONSTRUTOR DE INSTALADOR WINDOWS
+
+Pasta do projeto: C:\NONIVERUS\NONIVERUS_POSTERTILE
+
+1. Criar um backup da pasta atual (já confirmado pelo utilizador).
+2. Extrair ESTE ZIP para uma pasta de trabalho limpa, por exemplo:
+   C:\NONIVERUS\TOOLS\PosterTile_v080_Build
+   Evitar misturar 'dist' ou 'build' antigos.
+3. No Windows 10/11 64-bit, instalar Python 3.10+ para a COMPILACAO
+   (não é necessário no PC de destino).
+4. Instalar Inno Setup 6 para gerar o instalador.
+5. Executar CONSTRUIR_SETUP_WINDOWS.cmd.
+6. Resultado: release\NONIVERUS_PosterTile_Setup_v0.8.0.exe
+   Caso falte Inno Setup, a compilação cria apenas o EXE em pasta
+   dist\NONIVERUS PosterTile\ (EXE + _internal).
+7. Instalar num Windows de teste sem Python e testar:
+   - arranque; temas Midnight Sapphire e Pearl Titanium
+   - idiomas PT/EN/ES/FR/IT
+   - importar JPG/PNG, selecionar A4/A3, exportar PDF
+   - impressão a 100% e calibração física
+   - atalhos, desinstalação e conservação de PDFs e imagens
+
+NOTAS DE SEGURANCA E DISTRIBUICAO
+- O instalador utiliza AppData/Local/Programs por utilizador; não substitui
+  silenciosamente instalações em C:\NONIVERUS\NONIVERUS_POSTERTILE.
+- Nao inclui assinatura digital; SmartScreen pode apresentar avisos.
+- Nao inclui atualizacoes automaticas ou verificacao de origem.
+- O pacote contem avisos legais preliminares. Antes de DISTRIBUIR a terceiros,
+  rever todas as licencas das dependencias (nomeadamente Qt/PySide6).
+- Nao apagar ficheiros do utilizador durante a desinstalacao.
+- O backup de codigo nao inclui os dados e preferencias do Windows.
+- A interface QML ainda exige validacao num Windows real apos compilacao.
+- Os scripts mais antigos foram deixados para referencia; para o instalador
+  usa somente CONSTRUIR_SETUP_WINDOWS.cmd.
+
+TESTES REALIZADOS NESTE AMBIENTE
+- Compilacao de sintaxe Python para main.py e postertile_engine.py.
+- Presenca dos recursos e dos scripts.
+NAO realizado: build Windows, teste de instalador, smoke test Qt e assinatura.

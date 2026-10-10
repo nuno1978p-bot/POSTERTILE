@@ -1,0 +1,53 @@
+NONIVERUS PosterTile Luxury Studio v0.8.2
+========================================
+
+INSTALACAO: esta entrega e um projecto Windows e construtor de Setup.
+O ZIP NAO CONTEM um executavel Windows ja compilado.
+O Setup sera criado no Windows pelo comando abaixo.
+
+FUNCIONALIDADE NOVA: A3 em 2 folhas A4
+1) Abrir o PosterTile.
+2) Em FORMATO FINAL, selecionar:
+   "A3 horizontal (2 A4)" ou "A3 vertical (2 A4)".
+3) O selector mostra automaticamente dois modos:
+   - Com margens: 2 A4, montagem menor do que A3.
+   - Sem margens: 2 A4, dimensoes A3 nominais; so com
+     impressora A4 sem margens, impressao fisica a 100%.
+4) Exportar PDF, imprimir e unir como indicado no ficheiro
+   LEIA_ME_A3_2_A4_v0_8_1.txt.
+
+Continua disponivel a impressao A3 exacta em multiplas folhas
+A4 normais, selecionando A3 horizontal / vertical no tamanho
+final, e A4 no papel de impressao (sem modo '2 A4').
+
+PROCEDIMENTO SE JA TENS A v0.8.0 INSTALADA
+- Fazer backup do projecto.
+- Copiar este codigo-fonte para a pasta de DESENVOLVIMENTO
+  C:\NONIVERUS\NONIVERUS_POSTERTILE (nao para a pasta de
+  instalacao em AppData).
+- Executar CONSTRUIR_SETUP_WINDOWS.cmd. Recompila o EXE e cria
+  o instalador v0.8.2, com Inno Setup no disco D:
+  D:\Program Files (x86)\Inno Setup 6
+- Setup esperado:
+  release\NONIVERUS_PosterTile_Setup_v0.8.2.exe
+- Instalar depois de testar, fechando a versao anterior.
+- NAO executar COMPILAR_SO_SETUP.cmd enquanto o EXE 0.8.2
+  ainda nao tiver sido compilado.
+
+VALIDACOES EFETUADAS NESTA ENTREGA
+- 7 testes automaticos de geometria: PASS
+- PDFs de 2 folhas A4: 4 combinacoes, horizontal/vertical e
+  com margens/sem margens: PASS
+- Sintaxe Python: PASS
+- QML: verificacao estatica de delimitadores, nao execucao.
+- Compilacao Windows e instalacao: PENDENTE em ambiente real.
+- Montagem fisica: PENDENTE.
+
+CONSIDERACOES
+- Nao modificar ou eliminar os teus backups.
+- O modo sem margens pode cortar uns milimetros devido ao
+  comportamento da impressora; testar com uma grelha.
+- O modo seguro imprime apenas no espaco imprimivel, para
+  depois cortar as duas margens interiores e unir.
+
+NONIVERUS | Software without strings.

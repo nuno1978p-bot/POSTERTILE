@@ -1,0 +1,20 @@
+NONIVERUS PosterTile Luxury Studio v0.8.8 DEV — Branding
+
+ALTERACOES
+- Dashboard / topo esquerdo: iconografia específica do produto PosterTile.
+- App Qt / barra de tarefas: postertile_icon.ico (Windows multi-resolução).
+- Control Center > Sobre: logótipo institucional NONIVERUS.
+- Scripts PyInstaller e Inno Setup apontam para o novo ícone.
+- Identificação da versão uniformizada para v0.8.8 nos componentes principais.
+- Os ficheiros de marca anteriores foram preservados para compatibilidade.
+- NÃO inclui executável Windows compilado, nem implementa licenciamento Owner/Private Preview.
+
+PARA TESTAR SEM ALTERAR A VERSÃO ESTÁVEL
+1. Extrai para C:\NONIVERUS\NONIVERUS_POSTERTILE_DEV
+2. No PowerShell:
+   & "C:\NONIVERUS\NONIVERUS_POSTERTILE\.venv\Scripts\python.exe" "C:\NONIVERUS\NONIVERUS_POSTERTILE_DEV\main.py"
+3. Confirma dashboard, ícone da janela, Control Center > Sobre e alternância de tema.
+4. Não recompilar o instalador até passar estes testes.
+
+NOTA: Qt Quick/QML não foi executado num Windows nesta preparação.
+O ícone incorporado no EXE/atalhos/instalador só será atualizado numa futura compilação Windows.

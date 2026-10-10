@@ -1,0 +1,7 @@
+NONIVERUS PosterTile v0.6.1 - Correção do arranque QML
+1. Feche a aplicação.
+2. Faça uma cópia de segurança de C:\NONIVERUS\NONIVERUS_POSTERTILE\ui\Main.qml
+3. Extraia este ZIP para C:\NONIVERUS\NONIVERUS_POSTERTILE\ e substitua o ficheiro ui\Main.qml.
+4. Execute INICIAR_WINDOWS.bat.
+Corrigidos dois caracteres ';' inválidos nas linhas 133 e 138.
+Ainda requer validação ao executar no Windows.

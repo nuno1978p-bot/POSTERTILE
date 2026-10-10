@@ -1,0 +1,7 @@
+NONIVERUS PosterTile - hotfix QML v0.8.3.2
+
+Adicionada propriedade bool localizeChoices ao componente LuxuryCombo. Corrige o erro QML em Main.qml:319.
+
+Antes de reconstruir o EXE, executar: .\.venv\Scripts\python.exe main.py
+Nao foram alterados o motor de impressao nem os perfis de calibracao.
+A interface nao foi executada em Windows neste ambiente.

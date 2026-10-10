@@ -1,0 +1,38 @@
+NONIVERUS POSTERTILE STUDIO v0.5 — WINDOWS
+===========================================
+Destino sugerido: C:\NONIVERUS\NONIVERUS_POSTERTILE
+
+1. Faz copia de seguranca da pasta existente.
+2. Extrai os ficheiros deste ZIP nessa pasta.
+3. Instala Python 3.10+ para Windows, se necessario.
+4. Faz duplo clique em INICIAR_WINDOWS.bat.
+   Na primeira execucao sera criado um ambiente .venv e instaladas as dependencias.
+5. Para criar um executavel autonomo, usa CRIAR_EXE_WINDOWS.bat.
+   O EXE e compilado localmente no Windows (nao e fornecido neste ZIP).
+
+MODO KIDS:
+Abre a imagem, define a altura real em cm, confirma as folhas, gera o PDF.
+Com PNG transparente, as margens exteriores transparentes sao removidas.
+A largura e proporcional a personagem; nao e deformada.
+
+MODO MAKER / PRO:
+A2, A1 ou dimensoes personalizadas. A orientacao horizontal e corrigida.
+
+MONTAGEM:
+No modo Sobrepor, a imagem repete-se na faixa de 10 mm.
+Corta a margem branca indicada (nao a faixa de imagem), alinha e cola pelo verso.
+Imprime sempre a 100%, sem "Ajustar a pagina".
+Confirma a dimensao com regua e testa duas folhas antes de imprimir todas.
+
+PRE-VISUALIZACAO:
+"Perspetiva 3D" apresenta uma inclinacao visual de profundidade, nao e um motor 3D real.
+A geometria do PDF permanece plana e em milimetros.
+
+NOTAS IMPORTANTES:
+- UI PySide6/Qt Widgets, com visuais premium e perspectiva 2.5D.
+- Motor PDF recuperado da v0.4, sem alteracoes na logica de paginacao.
+- Validacao automatica de sintaxe e geracao do PDF efetuada.
+- Ainda nao validado o lancamento da UI nem a impressao em Windows real.
+- Garante que a impressora suporta a margem de seguranca definida.
+
+NONIVERUS | Masterplan V3
