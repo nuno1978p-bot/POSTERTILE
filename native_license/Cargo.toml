@@ -1,0 +1,11 @@
+[package]
+name = "nv_license_native"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "nv_license_native"
+crate-type = ["cdylib"]
+
+[dependencies]
+ed25519-dalek = { version = "2.2", default-features = false, features = ["std"] }

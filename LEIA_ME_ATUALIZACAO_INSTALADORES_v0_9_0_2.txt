@@ -1,0 +1,54 @@
+NONIVERUS POSTERTILE LUXURY STUDIO
+v0.9.0.2 DEV — INSTALADORES COM DETECAO DE ATUALIZACAO
+
+Objetivo:
+- Se a mesma edicao ja estiver instalada, o instalador apresenta
+  "Instalacao existente detetada" e muda o botao final para "Atualizar".
+- Se nao houver instalacao da MESMA edicao, continua como instalacao nova.
+- Mantem o AppId e a pasta anterior da edicao (Inno Setup UsePreviousAppDir).
+- Mantem Owner e Private Preview independentes; nao altera a Owner quando
+  atualiza a Private Preview, e vice-versa.
+- Nao apaga a licenca offline armazenada fora da pasta de instalacao.
+- Nao cria nem altera chaves privadas Ed25519.
+- A v0.8.x estavel usa OUTRO AppId e NAO sera atualizada automaticamente
+  por nenhum dos instaladores 0.9.0.2.
+
+REQUISITO
+A pasta C:\NONIVERUS\NONIVERUS_POSTERTILE_DEV deve ja ter recebido
+o hotfix v0.9.0.1 do Control Center. O script recusa substituir arquivos
+que tenham mudado entretanto (usa SHA256) e cria backups fora do projeto.
+
+APLICAR
+1. Extrair este ZIP para C:\NONIVERUS\HOTFIX_INSTALADORES_0902
+2. Abrir PowerShell (nao e necessario executar como administrador).
+3. Executar:
+   powershell.exe -NoProfile -ExecutionPolicy Bypass -File "C:\NONIVERUS\HOTFIX_INSTALADORES_0902\APLICAR_ATUALIZACAO_INSTALADORES.ps1"
+
+RECOMPILAR NO WINDOWS
+   cd C:\NONIVERUS\NONIVERUS_POSTERTILE_DEV
+   .\CONSTRUIR_OWNER_WINDOWS.cmd
+   .\CONSTRUIR_PREVIEW_WINDOWS.cmd
+
+RESULTADO ESPERADO
+   release_editions\NONIVERUS_PosterTile_Owner_Setup_v0.9.0.2.exe
+   release_editions\NONIVERUS_PosterTile_PrivatePreview_Setup_v0.9.0.2.exe
+
+TESTES
+1. Instalar v0.9.0.2 Preview SOBRE a Preview 0.9.0.1: ver "Atualizar"
+   no ultimo ecra do instalador; nao pedir desinstalacao manual.
+2. Reabrir a Preview e confirmar que a licenca anterior continua valida.
+3. Exportar um pequeno PDF. Confirmar que nao alterou a Owner.
+4. Instalar Owner v0.9.0.2 SOBRE a Owner 0.9.0: mesmo comportamento.
+5. Executar o instalador num Windows que NAO tenha essa edicao:
+   devera apresentar o percurso normal de "Instalar".
+
+AUDITORIA
+- A deteccao e feita no registo por AppId + _is1, conforme Inno Setup.
+- O instalador reutiliza o diretorio anterior e fecha a app em execucao
+  quando necessario (CloseApplications=yes).
+- O codigo de compilacao build_editions.py foi atualizado para nao
+  perder a funcionalidade ao regenerar os .iss.
+- A nova versao surge no UI QML, metadados EXE e nomes dos instaladores.
+- Nao foi compilado ou testado um EXE/instalador no Windows neste ambiente.
+- Nao colocar a chave license_signer_ed25519.pem em repositorios/ZIPs.
+- Nao correr license_authority.py init de novo.

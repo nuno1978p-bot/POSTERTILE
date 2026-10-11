@@ -1,0 +1,51 @@
+NONIVERUS POSTERTILE — HOTFIX v0.9.0.2 ADAPTATIVO
+
+PORQUÊ:
+O hotfix anterior recusou continuar porque exigia que seis ficheiros
+fossem idênticos aos da v0.9.0.1. É uma condição demasiado restritiva
+para um projeto onde houve alterações locais.
+
+ESTA VERSÃO:
+- Não compara hashes de ficheiros completos.
+- Examina os pontos específicos onde precisa de alterar o código.
+- Preserva os restantes conteúdos dos ficheiros.
+- Verifica que os AppId Owner e Preview continuam distintos e iguais.
+- Faz simulação antes de modificar.
+- Guarda backups antes de escrever alterações.
+- Não altera licenças, chaves privadas, DLL Rust, nem edições existentes instaladas.
+- Não altera diretamente os scripts Inno: o build_editions.py gera-os durante a compilação.
+
+FICHEIROS MODIFICADOS SE A VERIFICAÇÃO PASSAR:
+  build_editions.py
+  main.py
+  ui/Main.qml
+  version_info.txt
+
+A EXECUTAR:
+1. Extrai este ZIP para C:\NONIVERUS\HOTFIX_INSTALADORES_0902_ADAPTATIVO
+2. Abre PowerShell e executa:
+   & "C:\NONIVERUS\HOTFIX_INSTALADORES_0902_ADAPTATIVO\APLICAR_0902_ADAPTATIVO.cmd"
+
+3. Caso termine com SUCESSO, compila em PowerShell:
+   cd C:\NONIVERUS\NONIVERUS_POSTERTILE_DEV
+   .\CONSTRUIR_OWNER_WINDOWS.cmd
+   .\CONSTRUIR_PREVIEW_WINDOWS.cmd
+
+4. Testa que o instalador mostra "Atualizar" para a edição existente
+   e que a licença da Private Preview continua válida após atualizar.
+
+BACKUP:
+  %LOCALAPPDATA%\NONIVERUS\PosterTile\build_backups\InstallerUpdate_v0902_adaptativo_*
+
+IMPORTANTE:
+- Não voltes a executar license_authority.py init.
+- Nunca publiques chaves privadas.
+- Se o patch ainda detetar uma estrutura incompatível, pára e mostra o motivo.
+  Nesse caso, NÃO substituas manualmente o build_editions.py.
+- Este pacote apenas corrige as fontes. Compilação Windows e teste visual
+  precisam de ser realizados no teu computador.
+
+TESTES DO PATCH:
+- V0.9.0.1 original e versão com comentários locais: OK
+- Sintaxe Python e geração de ambos os scripts Inno: OK
+- Compilação do instalador em Windows: AINDA NÃO TESTADA NESTE AMBIENTE

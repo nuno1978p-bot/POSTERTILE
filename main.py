@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""NONIVERUS PosterTile Luxury Studio v0.8.12 — Qt Quick front-end."""
+"""NONIVERUS PosterTile Luxury Studio v0.9.0.2.2 — Qt Quick front-end."""
 import os, sys, math, tempfile, atexit, shutil
 from pathlib import Path
 from PySide6.QtCore import QObject, Signal, Property, Slot, QUrl, QSettings
@@ -14,6 +14,15 @@ from a3_two_a4 import plan_a3_two, export_a3_two_a4
 import printer_calibration as pc
 
 BASE=Path(getattr(sys, "_MEIPASS", Path(__file__).resolve().parent))
+try:
+    from edition_config import EDITION
+except ImportError:
+    # Normal source checkout remains an unrestricted, explicitly labelled DEV build.
+    # Private Preview installers MUST be built with build_editions.py, which embeds
+    # edition_config.py containing EDITION='preview'. No user-facing edition toggle.
+    EDITION="dev"
+if EDITION not in ("dev", "owner", "preview"):
+    raise RuntimeError("Edição NONIVERUS desconhecida.")
 
 class Studio(QObject):
     changed=Signal()
@@ -65,6 +74,10 @@ class Studio(QObject):
     @Property(str, notify=changed)
     def supportEmail(self):
         return "contact@noniverus.com"
+
+    @Property(str, constant=True)
+    def editionName(self):
+        return {"owner":"OWNER", "preview":"PRIVATE PREVIEW", "dev":"DEV"}[EDITION]
 
     @Property(str,notify=changed)
     def theme(self): return self._theme
@@ -847,6 +860,13 @@ class Studio(QObject):
         dlg.exec()
     @Slot()
     def export(self):
+        # Second independent gate: a license removed/expired while the UI is open
+        # must not permit PDF creation. The native Rust verifier is fail-closed.
+        if EDITION == "preview":
+            from license_runtime import is_activated
+            if not is_activated(BASE):
+                self.notice.emit("Licença Private Preview inválida ou expirada. Fecha e reabre a aplicação para ativar.")
+                return
         if not self._path:self.notice.emit("Primeiro, seleciona uma imagem.");return
         try:
             p=self._make_plan()
@@ -903,6 +923,14 @@ def main():
     app.setApplicationName("NONIVERUS PosterTile Luxury Studio")
     app.setApplicationDisplayName("NONIVERUS PosterTile Luxury Studio")
     app.setWindowIcon(QIcon(str(BASE/"assets"/"branding"/"postertile_icon.ico")))
+    if EDITION == "preview":
+        from license_runtime import activate_interactively, native_path
+        if not native_path(BASE).is_file():
+            QMessageBox.critical(None, "NONIVERUS Private Preview",
+                "Verificador de licença não encontrado. Reinstala a edição Private Preview.")
+            return 5
+        if not activate_interactively(BASE):
+            return 3
     bridge=Studio()
     engine=QQmlApplicationEngine()
     engine.rootContext().setContextProperty("studio",bridge)

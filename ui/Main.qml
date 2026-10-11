@@ -8,7 +8,7 @@ ApplicationWindow {
     width: 1500; height: 920
     minimumWidth: 1100; minimumHeight: 700
     visible: true
-    title: "NONIVERUS PosterTile Luxury Studio v0.8.12"
+    title: "NONIVERUS PosterTile Luxury Studio v0.9.0.2  /  " + studio.editionName
     color: (win.light ? "#E7E3DB" : "#080E19")
     property var dictionary: {"pt-PT": {"Cria sem limites.": "Cria sem limites.", "Precisão profissional em cada folha.": "Precisão profissional em cada folha.", "＋   IMPORTAR IMAGEM": "＋   IMPORTAR IMAGEM", "FORMATO FINAL": "FORMATO FINAL", "Altura (cm)": "Altura (cm)", "Largura (cm)": "Largura (cm)", "PROPORÇÃO PRESERVADA": "PROPORÇÃO PRESERVADA", "Sem deformar a imagem original": "Sem deformar a imagem original", "PAPEL DE IMPRESSÃO  /  SELEÇÃO MANUAL": "PAPEL DE IMPRESSÃO  /  SELEÇÃO MANUAL", "02  /  PRINT ENGINE": "02  /  PRINT ENGINE", "OCULTAR  −": "OCULTAR  −", "AVANÇADO  ＋": "AVANÇADO  ＋", "Método de montagem": "Método de montagem", "Margem (mm)": "Margem (mm)", "Sobreposição (mm)": "Sobreposição (mm)", "PLANO DE IMPRESSÃO": "PLANO DE IMPRESSÃO", "EXPORTAR PDF  ↗": "EXPORTAR PDF  ↗", "O teu projeto, em grande.": "O teu projeto, em grande.", "◇   VISTA PLANA": "◇   VISTA PLANA", "◇   PERSPETIVA": "◇   PERSPETIVA", "＋\\n\\nIMPORTA A TUA IMAGEM\\nPARA COMEÇAR": "＋\\n\\nIMPORTA A TUA IMAGEM\\nPARA COMEÇAR", "Visualização ilustrativa  ·  O PDF usa coordenadas físicas exatas": "Visualização ilustrativa  ·  O PDF usa coordenadas físicas exatas", "●  VISTA DE MONTAGEM": "●  VISTA DE MONTAGEM", "PÁGINAS": "PÁGINAS", "01  /  PROJECT SETUP": "01  /  PROJECT SETUP"}, "en": {"Cria sem limites.": "Create without limits.", "Precisão profissional em cada folha.": "Professional precision on every sheet.", "＋   IMPORTAR IMAGEM": "＋   IMPORT IMAGE", "FORMATO FINAL": "FINAL SIZE", "Altura (cm)": "Height (cm)", "Largura (cm)": "Width (cm)", "PROPORÇÃO PRESERVADA": "ASPECT RATIO LOCKED", "Sem deformar a imagem original": "Original image not distorted", "PAPEL DE IMPRESSÃO  /  SELEÇÃO MANUAL": "PRINT PAPER  /  MANUAL SELECTION", "02  /  PRINT ENGINE": "02  /  PRINT ENGINE", "OCULTAR  −": "HIDE  −", "AVANÇADO  ＋": "ADVANCED  ＋", "Método de montagem": "Assembly method", "Margem (mm)": "Margin (mm)", "Sobreposição (mm)": "Overlap (mm)", "PLANO DE IMPRESSÃO": "PRINT PLAN", "EXPORTAR PDF  ↗": "EXPORT PDF  ↗", "O teu projeto, em grande.": "Your project, larger than life.", "◇   VISTA PLANA": "◇   FLAT VIEW", "◇   PERSPETIVA": "◇   PERSPECTIVE", "＋\\n\\nIMPORTA A TUA IMAGEM\\nPARA COMEÇAR": "＋\\n\\nIMPORT AN IMAGE\\nTO START", "Visualização ilustrativa  ·  O PDF usa coordenadas físicas exatas": "Illustrative preview · PDF uses precise physical coordinates", "●  VISTA DE MONTAGEM": "●  ASSEMBLY VIEW", "PÁGINAS": "PAGES", "01  /  PROJECT SETUP": "01  /  PROJECT SETUP"}, "es": {"Cria sem limites.": "Crea sin límites.", "Precisão profissional em cada folha.": "Precisión profesional en cada hoja.", "＋   IMPORTAR IMAGEM": "＋   IMPORTAR IMAGEN", "FORMATO FINAL": "TAMAÑO FINAL", "Altura (cm)": "Altura (cm)", "Largura (cm)": "Anchura (cm)", "PROPORÇÃO PRESERVADA": "PROPORCIÓN CONSERVADA", "Sem deformar a imagem original": "Sin deformar la imagen", "PAPEL DE IMPRESSÃO  /  SELEÇÃO MANUAL": "PAPEL DE IMPRESIÓN  /  SELECCIÓN", "02  /  PRINT ENGINE": "02  /  MOTOR DE IMPRESIÓN", "OCULTAR  −": "OCULTAR  −", "AVANÇADO  ＋": "AVANZADO  ＋", "Método de montagem": "Método de montaje", "Margem (mm)": "Margen (mm)", "Sobreposição (mm)": "Solapamiento (mm)", "PLANO DE IMPRESSÃO": "PLAN DE IMPRESIÓN", "EXPORTAR PDF  ↗": "EXPORTAR PDF  ↗", "O teu projeto, em grande.": "Tu proyecto, a lo grande.", "◇   VISTA PLANA": "◇   VISTA PLANA", "◇   PERSPETIVA": "◇   PERSPECTIVA", "＋\\n\\nIMPORTA A TUA IMAGEM\\nPARA COMEÇAR": "＋\\n\\nIMPORTA UNA IMAGEN\\nPARA EMPEZAR", "Visualização ilustrativa  ·  O PDF usa coordenadas físicas exatas": "Vista ilustrativa · El PDF usa coordenadas físicas exactas", "●  VISTA DE MONTAGEM": "●  VISTA DE MONTAJE", "PÁGINAS": "PÁGINAS", "01  /  PROJECT SETUP": "01  /  CONFIGURACIÓN"}, "fr": {"Cria sem limites.": "Créez sans limites.", "Precisão profissional em cada folha.": "Précision professionnelle sur chaque feuille.", "＋   IMPORTAR IMAGEM": "＋   IMPORTER UNE IMAGE", "FORMATO FINAL": "FORMAT FINAL", "Altura (cm)": "Hauteur (cm)", "Largura (cm)": "Largeur (cm)", "PROPORÇÃO PRESERVADA": "PROPORTIONS CONSERVÉES", "Sem deformar a imagem original": "Image originale non déformée", "PAPEL DE IMPRESSÃO  /  SELEÇÃO MANUAL": "PAPIER  /  SÉLECTION MANUELLE", "02  /  PRINT ENGINE": "02  /  MOTEUR D’IMPRESSION", "OCULTAR  −": "MASQUER  −", "AVANÇADO  ＋": "AVANCÉ  ＋", "Método de montagem": "Méthode d’assemblage", "Margem (mm)": "Marge (mm)", "Sobreposição (mm)": "Chevauchement (mm)", "PLANO DE IMPRESSÃO": "PLAN D’IMPRESSION", "EXPORTAR PDF  ↗": "EXPORTER PDF  ↗", "O teu projeto, em grande.": "Votre projet en grand.", "◇   VISTA PLANA": "◇   VUE PLANE", "◇   PERSPETIVA": "◇   PERSPECTIVE", "＋\\n\\nIMPORTA A TUA IMAGEM\\nPARA COMEÇAR": "＋\\n\\nIMPORTEZ UNE IMAGE\\nPOUR COMMENCER", "Visualização ilustrativa  ·  O PDF usa coordenadas físicas exatas": "Aperçu illustratif · Le PDF utilise des coordonnées physiques exactes", "●  VISTA DE MONTAGEM": "●  VUE D’ASSEMBLAGE", "PÁGINAS": "PAGES", "01  /  PROJECT SETUP": "01  /  CONFIGURATION"}, "it": {"Cria sem limites.": "Crea senza limiti.", "Precisão profissional em cada folha.": "Precisione professionale su ogni foglio.", "＋   IMPORTAR IMAGEM": "＋   IMPORTA IMMAGINE", "FORMATO FINAL": "FORMATO FINALE", "Altura (cm)": "Altezza (cm)", "Largura (cm)": "Larghezza (cm)", "PROPORÇÃO PRESERVADA": "PROPORZIONI CONSERVATE", "Sem deformar a imagem original": "Immagine originale non deformata", "PAPEL DE IMPRESSÃO  /  SELEÇÃO MANUAL": "CARTA  /  SCELTA MANUALE", "02  /  PRINT ENGINE": "02  /  MOTORE DI STAMPA", "OCULTAR  −": "NASCONDI  −", "AVANÇADO  ＋": "AVANZATE  ＋", "Método de montagem": "Metodo di montaggio", "Margem (mm)": "Margine (mm)", "Sobreposição (mm)": "Sovrapposizione (mm)", "PLANO DE IMPRESSÃO": "PIANO DI STAMPA", "EXPORTAR PDF  ↗": "ESPORTA PDF  ↗", "O teu projeto, em grande.": "Il tuo progetto in grande.", "◇   VISTA PLANA": "◇   VISTA PIANA", "◇   PERSPETIVA": "◇   PROSPETTIVA", "＋\\n\\nIMPORTA A TUA IMAGEM\\nPARA COMEÇAR": "＋\\n\\nIMPORTA UN’IMMAGINE\\nPER INIZIARE", "Visualização ilustrativa  ·  O PDF usa coordenadas físicas exatas": "Anteprima illustrativa · Il PDF usa coordinate fisiche esatte", "●  VISTA DE MONTAGEM": "●  VISTA MONTAGGIO", "PÁGINAS": "PAGINE", "01  /  PROJECT SETUP": "01  /  CONFIGURAZIONE"}}
     property var extraTranslations: ({
@@ -83,6 +83,41 @@ ApplicationWindow {
             horizontalAlignment: Text.AlignHCenter; verticalAlignment: Text.AlignVCenter
         }
     }
+    // Navegação do Control Center: largura mínima zero para não extravasar
+    // a barra lateral quando o texto traduzido é comprido (Private Preview).
+    component CenterNavButton: Button {
+        id: cnb
+        property bool primary: false
+        implicitWidth: 0
+        implicitHeight: 54
+        Layout.minimumWidth: 0
+        background: Rectangle {
+            radius: 12
+            color: cnb.down ? (win.light ? "#A96B40" : "#CE8F5B")
+                : (cnb.primary ? (win.light ? "#B97543" : "#E9A66B")
+                : (cnb.hovered ? (win.light ? "#C7D2DA" : "#23334B")
+                : (win.light ? "#D7DEE2" : "#1A283D")))
+            border.color: cnb.primary ? (win.light ? "#BD814E" : "#F5BF8A")
+                : (win.light ? "#A7B5C0" : "#34465E")
+            border.width: 1
+            Behavior on color { ColorAnimation { duration: 150 } }
+        }
+        contentItem: Text {
+            text: cnb.text
+            color: cnb.primary ? (win.light ? "#18283C" : "#1B1720")
+                : (win.light ? "#263B53" : "#EAF1FC")
+            font.pixelSize: 12
+            font.weight: Font.DemiBold
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
+            wrapMode: Text.WordWrap
+            maximumLineCount: 2
+            elide: Text.ElideRight
+            leftPadding: 8
+            rightPadding: 8
+            clip: true
+        }
+    }
     component StudioField: TextField {
         color: (win.light ? "#25364A" : "#EFF4FF"); selectedTextColor: (win.light ? "#FFFFFF" : "#FFFFFF"); selectionColor: (win.light ? "#7594B8" : "#385F9E")
         font.pixelSize: 15
@@ -144,7 +179,7 @@ ApplicationWindow {
             Text { text: "PRECISION PRINTING"; color: muted; font.pixelSize: 11; font.letterSpacing: 2 }
             Rectangle { width: 1; height: 26; color: line; Layout.leftMargin: 14; Layout.rightMargin: 14 }
             ActionButton { text: "⚙  " + win.centerLabel("settings"); onClicked: centerDialog.open() }
-            Text { text: "v0.8.12  /  DEV"; color: (win.light ? "#516477" : "#CBD6E8"); font.pixelSize: 11 }
+            Text { text: "v0.9.0.2  /  " + studio.editionName; color: (win.light ? "#516477" : "#CBD6E8"); font.pixelSize: 11 }
         }
         Rectangle { Layout.fillWidth: true; Layout.preferredHeight: 1; color: (win.light ? "#B4C1CA" : "#25334A") }
 
@@ -570,16 +605,31 @@ ApplicationWindow {
             RowLayout {
                 Layout.fillWidth: true; Layout.fillHeight: true; spacing: 0
                 Rectangle {
-                    Layout.preferredWidth: 195; Layout.fillHeight: true
+                    // 240px em ecrãs normais; adapta-se a janelas pequenas.
+                    Layout.preferredWidth: Math.min(240, Math.max(195, centerDialog.width * 0.29))
+                    Layout.minimumWidth: 195
+                    Layout.fillHeight: true
+                    clip: true
                     color: win.light ? "#D2DADE" : "#112035"
                     ColumnLayout {
                         anchors.fill: parent; anchors.margins: 15; spacing: 9
-                        ActionButton { Layout.fillWidth: true; text: "⚙  " + win.centerLabel("settings"); primary: win.centerPage === 0; onClicked: win.centerPage = 0 }
-                        ActionButton { Layout.fillWidth: true; text: "▤  " + win.centerLabel("printers"); primary: win.centerPage === 1; onClicked: win.centerPage = 1 }
-                        ActionButton { Layout.fillWidth: true; text: "?  " + win.centerLabel("help"); primary: win.centerPage === 2; onClicked: win.centerPage = 2 }
-                        ActionButton { Layout.fillWidth: true; text: "ⓘ  " + win.centerLabel("about"); primary: win.centerPage === 3; onClicked: win.centerPage = 3 }
+                        CenterNavButton { Layout.fillWidth: true; text: "⚙  " + win.centerLabel("settings"); primary: win.centerPage === 0; onClicked: win.centerPage = 0 }
+                        CenterNavButton { Layout.fillWidth: true; text: "▤  " + win.centerLabel("printers"); primary: win.centerPage === 1; onClicked: win.centerPage = 1 }
+                        CenterNavButton { Layout.fillWidth: true; text: "?  " + win.centerLabel("help"); primary: win.centerPage === 2; onClicked: win.centerPage = 2 }
+                        CenterNavButton { Layout.fillWidth: true; text: "ⓘ  " + win.centerLabel("about"); primary: win.centerPage === 3; onClicked: win.centerPage = 3 }
                         Item { Layout.fillHeight: true }
-                        Caption { text: "v0.8.12  /  DEV" }
+                        Text {
+                            Layout.fillWidth: true
+                            Layout.minimumWidth: 0
+                            text: "v0.9.0.2  /  " + studio.editionName
+                            color: win.light ? "#63758B" : "#899BB7"
+                            font.pixelSize: 10
+                            font.weight: Font.DemiBold
+                            font.letterSpacing: 1.0
+                            wrapMode: Text.WordWrap
+                            maximumLineCount: 2
+                            elide: Text.ElideRight
+                        }
                     }
                 }
                 Rectangle {
@@ -670,7 +720,7 @@ ApplicationWindow {
                                 Text { text: win.aboutText("product"); color: win.ink; font.family: "Georgia"; font.pixelSize: 22 }
                                 Rectangle { Layout.fillWidth: true; Layout.preferredHeight: 1; color: win.line }
                                 Caption { text: win.aboutText("version") }
-                                Text { text: "v0.8.12  /  DEVELOPMENT"; color: win.ink; font.pixelSize: 14 }
+                                Text { text: "v0.9.0.2  /  " + studio.editionName; color: win.ink; font.pixelSize: 14 }
                                 Caption { text: win.aboutText("description") }
                                 Text { Layout.fillWidth: true; wrapMode: Text.WordWrap; text: win.centerLabel("aboutInfo"); color: win.ink; font.pixelSize: 13 }
                                 Rectangle { Layout.fillWidth: true; Layout.preferredHeight: 1; color: win.line }

@@ -1,0 +1,143 @@
+NONIVERUS POSTERTILE LUXURY STUDIO - v0.9.0 DEV
+OWNER EDITION + PRIVATE PREVIEW + LICENSE AUTHORITY
+=================================================
+
+Este ZIP e o código-fonte são APENAS para o proprietário.
+NÃO PARTILHAR O ZIP, as pastas de desenvolvimento, a edição OWNER
+nem a ferramenta LICENSE AUTHORITY com os destinatários.
+Aos dois conhecidos, enviar APENAS o Setup PRIVATE PREVIEW.
+
+1. O QUE ESTÁ FEITO
+-------------------
+- OWNER: edição completa sem ativação, compilada num executável separado.
+- PRIVATE PREVIEW: bloqueia o arranque sem licença assinada válida.
+- PRIVATE PREVIEW: revalida a licença antes de exportar PDF.
+- Verificação Ed25519 em DLL nativa Rust compilada com chave pública.
+- Licença associada à instalação Windows via hash SHA-256 de MachineGuid.
+- Ativação offline por troca de um pedido e licença por WhatsApp.
+- NONIVERUS LICENSE AUTHORITY: ferramenta exclusivamente tua para emitir licenças,
+  com interface gráfica e registo local de emissões.
+- Dois nomes de aplicação e dois AppId Inno Setup para instalações separadas.
+- Configuração visual e motor PDF da v0.8.12 preservados.
+
+2. IMPORTANTE: A CHAVE PRIVADA
+------------------------------
+Antes de distribuir PRIVATE PREVIEW, no teu PC:
+
+  cd C:\NONIVERUS\NONIVERUS_POSTERTILE_DEV
+  .\.venv\Scripts\python.exe license_authority.py init
+
+A chave privada é criada em:
+  %LOCALAPPDATA%\NONIVERUS\PosterTile\owner_private\license_signer_ed25519.pem
+
+O ficheiro PUBLICO é:
+  %LOCALAPPDATA%\NONIVERUS\PosterTile\owner_private\license_signer_public.bin
+
+NUNCA partilhar nem publicar o ficheiro PEM.
+Guardar backup cifrado da chave privada FORA de pastas sincronizadas e do Git.
+Se perderes a chave privada, não conseguirás renovar licenças emitidas pela mesma
+identidade (recriar a chave exigirá recompilar PRIVATE PREVIEW).
+
+3. COMPILAR OWNER (NO TEU WINDOWS)
+----------------------------------
+- Criar primeiro cópia da atual versão instalada/estável.
+- Extrair este ZIP numa pasta DEV independente.
+- Executar CONSTRUIR_OWNER_WINDOWS.cmd.
+- Necessário: Python, PyInstaller e Inno Setup 6 (o script instala dependências).
+- OWNER não necessita de Rust para compilar.
+- Resultado previsto:
+  release_editions\NONIVERUS_PosterTile_Owner_Setup_v0.9.0.exe
+- Ferramenta License Authority portátil:
+  dist_owner_tools\NONIVERUS License Authority\NONIVERUS License Authority.exe
+
+Não distribuir o Setup OWNER nem a ferramenta de autoridade.
+No Setup OWNER a instalação usa Program Files e pede administrador.
+A localização de instalação é alterável.
+
+4. COMPILAR PRIVATE PREVIEW (COM PROTEÇÃO NATIVA)
+------------------------------------------------
+- Executar license_authority.py init PRIMEIRO, só uma vez.
+- Instalar Rust stable (cargo) + MSVC C++ Build Tools no PC de compilação.
+- Executar CONSTRUIR_PREVIEW_WINDOWS.cmd.
+- Compila nv_license_native.dll incorporando SOMENTE a chave pública.
+- Resultado previsto:
+  release_editions\NONIVERUS_PosterTile_PrivatePreview_Setup_v0.9.0.exe
+
+Atenção: se cargo, chave pública, DLL ou Inno Setup faltarem, o build falha.
+NÃO substituir o pacote protegido por uma edição DEV/OWNER por conveniência.
+
+5. PRIMEIRA ATIVAÇÃO DE UM CONHECIDO
+------------------------------------
+A. Enviar APENAS o instalador PRIVATE PREVIEW.
+B. Utilizador instala e abre; aparece a janela de ativação.
+C. Clica COPIAR PEDIDO DE ATIVAÇÃO e envia por WhatsApp.
+   Formato: NVREQ1|fingerprint|nonce (o MachineGuid real NÃO é enviado).
+D. No teu Windows, abrir:
+   dist_owner_tools\NONIVERUS License Authority\NONIVERUS License Authority.exe
+   (ou INICIAR_LICENSE_AUTHORITY.cmd com .venv).
+E. Colar pedido, escolher validade:
+   0 dias = sem data de expiração; >0 dias = validade definida.
+F. Gerar licença e copiar texto NVPT1|... assinado.
+G. Conhecido cola na aplicação e clica ATIVAR PREVIEW.
+H. A licença fica em:
+   %LOCALAPPDATA%\NONIVERUS\PosterTile\licenses\private_preview.lic
+
+REGRA: cada dispositivo deve enviar o SEU pedido. Uma licença copiada para
+outro Windows será recusada.
+
+6. O QUE NÃO É POSSÍVEL GARANTIR OFFLINE
+----------------------------------------
+- Impossível revogar instantaneamente uma licença já ativada sem internet.
+- Impossível garantir consumo de licença "uma única vez" no mesmo dispositivo
+  se a pessoa copiar/restaurar o ficheiro.
+- A alteração manual do relógio pode afetar licenças com expiração.
+- Software distribuído localmente pode, em teoria, ser modificado por um atacante.
+- A vinculação depende da instalação Windows; reinstalar Windows pode exigir
+  uma nova licença. Clones completos do Windows podem partilhar MachineGuid.
+
+A proteção é apropriada para impedir partilhas casuais por USB, não constitui DRM
+invulnerável. O dono mantém sempre a liberdade de emitir novas licenças.
+
+7. GIT / SEGURANÇA
+------------------
+- .gitignore exclui _build_work, dist_editions, dist_owner_tools,
+  release_editions, chaves PEM e credenciais.
+- Rever SEMPRE `git diff --cached --name-only` antes do commit.
+- NÃO publicar a chave privada, mesmo num repositório Private.
+- Se um dia a chave privada for publicada, revogar/rodar as chaves e
+  emitir novos instaladores/licenças; apagar um commit não apaga segredos
+  do histórico remoto.
+- O ficheiro base `main.py` executado com Python sem edition_config.py
+  é deliberadamente DEV sem restrição: NUNCA distribuir o projeto DEV.
+
+8. VALIDAÇÃO / ESTADO
+----------------------
+Verificados por testes locais: sintaxe Python, assinaturas Ed25519, adulteração,
+dispositivo errado, validade, recusa sem DLL e separação de staging.
+Ainda por testar NO TEU WINDOWS:
+- cargo build real da DLL Rust + PyInstaller de ambas as edições;
+- arranque real do OWNER e PRIVATE PREVIEW instalados;
+- fluxo WhatsApp/código real em DOIS computadores;
+- impressão física, margens e sobreposição.
+NÃO comercializar como 'testado' antes destes passos.
+
+9. EVITAR COMPILAR O EXECUTÁVEL ERRADO
+--------------------------------------
+Nesta versão os scripts antigos (CONSTRUIR_SETUP_WINDOWS.cmd e afins)
+estão DESATIVADOS propositadamente.
+Utilizar exclusivamente:
+  CONSTRUIR_OWNER_WINDOWS.cmd
+  CONSTRUIR_PREVIEW_WINDOWS.cmd
+  CONSTRUIR_AMBAS_WINDOWS.cmd
+
+10. COMANDOS RÁPIDOS
+---------------------
+    .\.venv\Scripts\python.exe license_authority.py status
+    .\.venv\Scripts\python.exe license_authority.py gui
+    .\.venv\Scripts\python.exe -m unittest discover -s tests -p test_licensing.py -v
+
+11. IMPORTANTE SOBRE A VERSÃO ESTÁVEL
+-------------------------------------
+Este ZIP não contém executáveis Windows pré-compilados.
+Mantém o Windows instalado e a branch main do Git intactos.
+Testa na pasta DEV, em seguida cria commit na branch dev se ficar aprovado.

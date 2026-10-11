@@ -1,0 +1,41 @@
+﻿NONIVERUS POSTERTILE LUXURY STUDIO
+HOTFIX v0.9.0.1 — CONTROL CENTER (OWNER / PRIVATE PREVIEW)
+
+OBJETIVO
+Corrigir os botões da navegação do Control Center que ficam tapados
+pelo painel direito na Private Preview. A Owner mantém-se funcional.
+
+O QUE FOI ALTERADO
+- Navegação QML responsiva, com largura apropriada.
+- Botões independentes com largura mínima zero e texto até duas linhas.
+- Clipping da área da navegação para evitar transbordo.
+- Rodapé da navegação legível em Private Preview.
+- Metadados da versão atualizados para v0.9.0.1.
+
+O QUE NÃO FOI ALTERADO
+- Chaves privadas, chaves públicas ou assinaturas Ed25519.
+- Código de licenciamento ou DLL Rust.
+- Motor PDF, composição, impressão e calibração.
+- Identificadores AppId dos dois instaladores (atualização in-place).
+
+INSTALAÇÃO DA CORREÇÃO NO CÓDIGO DEV
+1. Extrair este ZIP numa pasta temporária (por exemplo, no Ambiente de Trabalho).
+2. Abrir PowerShell na pasta extraída.
+3. Executar:
+     powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\APLICAR_HOTFIX_CONTROL_CENTER.ps1
+   O script cria automaticamente cópias de segurança de todos os ficheiros alterados.
+4. Recompilar SÓ a Preview:
+     cd C:\NONIVERUS\NONIVERUS_POSTERTILE_DEV
+     .\CONSTRUIR_PREVIEW_WINDOWS.cmd
+5. Localizar o instalador novo:
+     C:\NONIVERUS\NONIVERUS_POSTERTILE_DEV\release_editions\
+     NONIVERUS_PosterTile_PrivatePreview_Setup_v0.9.0.1.exe
+6. Atualizar a Private Preview instalada. A licença existente deve permanecer
+   válida. Confirmar que os quatro botões e o rodapé ficam totalmente visíveis.
+
+ATENÇÃO
+Não executar license_authority.py init novamente.
+Não enviar Owner nem License Authority para os destinatários.
+Não afirmar que o hotfix foi testado no Windows sem executar o instalador.
+A aplicação Owner instalada pode manter-se na versão 0.9.0 até à próxima
+atualização da Owner; o código partilhado fica corrigido em 0.9.0.1.

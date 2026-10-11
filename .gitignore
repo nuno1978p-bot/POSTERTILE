@@ -1,37 +1,47 @@
-﻿# Python
+# NONIVERUS v0.9.0
 .venv/
 venv/
 __pycache__/
 .pytest_cache/
-*.pyc
-*.pyo
-
-# Compilacao Windows
 build/
 dist/
 release/
-*.exe
-
-# Backups e arquivos antigos
+_build_work/
+dist_editions/
+release_editions/
 backups/
 NONIVERUS_POSTERTILE/
+*.pyc
 *.bak
 *.log
-*.zip
-
-# Documentos gerados
 *.pdf
-
-# Configuracoes locais
+*.zip
+*.exe
 .env
 .env.*
-printer_profiles.json
-
-# Licencas, chaves e dados privados
-licenses/
-secrets/
 *.pem
 *.key
 *.pfx
 *.p12
+*.token
+printer_profiles.json
+licenses/
+secrets/
+dist_owner_tools/
+
+# NONIVERUS v0.9.x - Compilacoes
+_build_work/
+dist_editions/
+dist_owner_tools/
+release_editions/
+target/
+.cargo/
+
+# Seguranca e licenciamento privado
+owner_private/
+build_backups/
+issued_licenses.jsonl
+*.lic
+*.nvlic
+*.dll
 *.token
