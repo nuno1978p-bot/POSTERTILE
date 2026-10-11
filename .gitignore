@@ -45,3 +45,5 @@ issued_licenses.jsonl
 *.nvlic
 *.dll
 *.token
+
+_hotfix_backups/
