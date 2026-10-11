@@ -1,0 +1,41 @@
+NONIVERUS PosterTile v0.9.1 — Hotfix ADAPTATIVO
+=================================================
+
+Este ZIP substitui o pacote anterior APENAS para a aplicacao do tema
+Playful Studio ao codigo-fonte existente. Resolve a falha de validacao
+de main.py causada por modificacoes locais em linhas de contexto.
+
+O script agora aplica mudancas semanticas pontuais e unicas no main.py:
+- versao da aplicacao
+- terceiro tema na leitura da configuracao e no seletor
+- paleta do editor de composicao
+E continua a testar os outros ficheiros antes de qualquer escrita.
+
+EXEMPLO POWERSHELL (sem compilar ainda):
+  $zip = "$env:USERPROFILE\Downloads\NONIVERUS_PosterTile_v0_9_1_Playful_Studio_ADAPTATIVO_DEV.zip"
+  $pasta = "C:\NONIVERUS\HOTFIX_PLAYFUL_091_ADAPTATIVO"
+  Expand-Archive -LiteralPath $zip -DestinationPath $pasta -Force
+  powershell.exe -NoProfile -ExecutionPolicy Bypass -File "$pasta\APLICAR_PLAYFUL_STUDIO_v091.ps1"
+
+Em caso de sucesso:
+  cd C:\NONIVERUS\NONIVERUS_POSTERTILE_DEV
+  .\.venv\Scripts\python.exe main.py
+
+Depois, em Definicoes > Tema visual, escolher Playful Studio.
+Nao compilar os dois instaladores antes de confirmar a interface Windows.
+
+REGRAS DE SEGURANCA
+- Nao apagar nem substituir manualmente main.py com ficheiros baseline.
+- O script verifica ANTES de modificar e cria backups em %%LOCALAPPDATA%%.
+- Se houver conflitos verdadeiros, PARA SEM alterar os ficheiros.
+- Nao executar license_authority.py init; nao altera nenhuma chave.
+- Preserva os identificadores de instalacao Owner e Private Preview.
+- A imagem ilustrativa da dashboard nao entra em exportacoes PDF.
+
+VALIDACAO DA VERSAO ADAPTATIVA:
+- Verificacao sem escrita: PASS (simulacao com alteracao local de main.py)
+- Aplicacao e repeticao sem duplicacao: PASS (simulacao)
+- Bloqueio em caso de ambiguidade: PASS (simulacao)
+- Qt Quick e instaladores Windows: aguardam teste na maquina de destino.
+
+Se o hotfix parar, enviar o texto do erro — nao forcar a copia.

@@ -1,0 +1,43 @@
+NONIVERUS PosterTile v0.9.1.4 DEV — Barra de titulo Windows
+
+OBJETIVO
+- Playful Studio: barra azul-claro (#E7F4FF), texto azul-escuro (#173B75).
+- Pearl Titanium: barra clara, texto azul-escuro.
+- Midnight Sapphire: barra escura, texto claro.
+- Atualiza automaticamente a barra ao trocar de tema.
+- Preserva os botoes nativos minimizar, maximizar, restaurar e fechar.
+- Mantem o comportamento de arranque maximizado ja implementado.
+- Windows 11 build 22000 ou superior: DWM caption/text customizados.
+- Windows 10 / plataformas nao suportadas: barra nativa sem alteracao.
+
+ARQUIVOS
+- patch_titlebar.py: alteracao pontual, sem substituir o projeto inteiro
+- APLICAR_BARRA_TITULO_0914.ps1: verificacao, backup, aplicacao
+
+COMO APLICAR
+1. Extrair o ZIP para C:\NONIVERUS\HOTFIX_TITULO_0914
+2. Na PowerShell:
+   powershell.exe -NoProfile -ExecutionPolicy Bypass -File "C:\NONIVERUS\HOTFIX_TITULO_0914\APLICAR_BARRA_TITULO_0914.ps1"
+3. Iniciar:
+   cd C:\NONIVERUS\NONIVERUS_POSTERTILE_DEV
+   .\.venv\Scripts\python.exe main.py
+
+TESTES NO WINDOWS
+- Playful Studio: barra da janela azul-claro e texto legivel.
+- Mudar para Pearl e Midnight: barra acompanha o tema, sem reiniciar.
+- Minimizar/restaurar/maximizar; painel direito e barra de tarefas funcionais.
+- Exportar um PDF de teste (nenhuma mudanca intencional no motor).
+- Validar Owner e Preview novamente antes de recompilar ou distribuir.
+
+O SCRIPT NAO:
+- Copia/modifica ui/Main.qml
+- Altera ficheiros de licenciamento, chave Ed25519 ou instaladores
+- Instala/compila EXE; versao visivel do produto permanece v0.9.1 DEV
+
+BACKUP
+%LOCALAPPDATA%\NONIVERUS\PosterTile\build_backups\TitleBar_v0914_*\main.py
+
+NOTA
+A aparencia final da barra do Windows 11 nao pode ser validada sem
+executar a aplicacao no Windows. Respeita o modo de alto contraste e
+as decisoes de renderizacao do sistema.

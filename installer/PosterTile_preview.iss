@@ -1,5 +1,5 @@
 ﻿#define MyAppName "NONIVERUS PosterTile Private Preview"
-#define MyAppVersion "0.9.0.2"
+#define MyAppVersion "0.9.1"
 #define MyAppExeName "NONIVERUS PosterTile Private Preview.exe"
 
 [Setup]
@@ -13,7 +13,7 @@ UsePreviousAppDir=yes
 UsePreviousTasks=yes
 DefaultGroupName=NONIVERUS
 OutputDir=..\release_editions
-OutputBaseFilename=NONIVERUS_PosterTile_PrivatePreview_Setup_v0.9.0.2
+OutputBaseFilename=NONIVERUS_PosterTile_PrivatePreview_Setup_v0.9.1
 SetupIconFile=..\assets\branding\postertile_icon.ico
 UninstallDisplayIcon={app}\{#MyAppExeName}
 Compression=lzma2
@@ -25,7 +25,7 @@ ArchitecturesAllowed=x64compatible
 ArchitecturesInstallIn64BitMode=x64compatible
 CloseApplications=yes
 RestartApplications=no
-VersionInfoVersion=0.9.0.2
+VersionInfoVersion=0.9.1
 VersionInfoCompany=NONIVERUS
 VersionInfoProductName={#MyAppName}
 VersionInfoProductVersion={#MyAppVersion}

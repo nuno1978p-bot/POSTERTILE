@@ -1,0 +1,46 @@
+NONIVERUS POSTERTILE — PLAYFUL STUDIO 0.9.1.1 (HOTFIX VISUAL DEV)
+11 de outubro de 2026
+
+Objetivo
+Aproximar a dashboard QML v0.9.1 do mockup aprovado, sem alterar
+exportacao, impressao, licenciamento Ed25519 ou as edicoes Owner/Private Preview.
+
+Alteracoes:
+- Secoes 01–04 com icones dentro de cartoes coloridos, apenas no Playful Studio.
+- Sidebar ligeiramente mais larga; identidade "Luxury Studio" em etiqueta dourada.
+- Pequenas estrelas de decoracao na area de trabalho (nao entram no PDF).
+- Linhas de divisao visiveis no cartaz ilustrativo de demonstracao.
+- Cartao de saida com fundo quente, icone ilustrado e contador em destaque.
+- Painel direito com marcadores circulares coloridos, melhor leitura e personagem ampliada.
+- Todos os outros temas mantem os seus controlos e layout funcional.
+- Fica na v0.9.1 do codigo de compilacao; a designacao v0.9.1.1 e apenas do hotfix
+  visual DEV. Nao compiles ainda os instaladores ate validarmos no Windows.
+
+INSTALACAO
+1. Descarrega o ZIP para a pasta Transferencias do Windows.
+2. Abre PowerShell e executa:
+
+$zip = "$env:USERPROFILE\Downloads\NONIVERUS_PosterTile_v0_9_1_1_Playful_Polish_DEV.zip"
+$pasta = "C:\NONIVERUS\HOTFIX_PLAYFUL_POLISH_0911"
+Expand-Archive -LiteralPath $zip -DestinationPath $pasta -Force
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File "$pasta\APLICAR_POLIMENTO_PLAYFUL_0911.ps1"
+
+3. So depois de "SUCESSO", abre a app DEV:
+cd C:\NONIVERUS\NONIVERUS_POSTERTILE_DEV
+.\.venv\Scripts\python.exe main.py
+
+4. Seleciona Definicoes > Tema visual > Playful Studio, maximiza a janela.
+   Faz duas capturas: dashboard sem imagem e dashboard com uma imagem real.
+
+SEGURANCA
+- Hotfix afeta EXCLUSIVAMENTE ui/Main.qml.
+- Faz verificacao sem escrever antes de aplicar.
+- Se um trecho nao coincidir, PARA antes de tocar nos ficheiros.
+- Guarda copia de Main.qml em %LOCALAPPDATA%\NONIVERUS\PosterTile\build_backups.
+- Repetir a aplicacao e seguro; reconhece trechos ja aplicados.
+- Nao altera License Authority, chaves privadas, AppId ou instaladores.
+- Nao foi possivel testar visualmente no Windows neste ambiente.
+
+Se parar, nao forces: envia o ficheiro
+C:\NONIVERUS\NONIVERUS_POSTERTILE_DEV\ui\Main.qml
+para uma adaptacao exata.

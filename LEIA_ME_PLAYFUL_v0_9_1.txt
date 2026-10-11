@@ -1,0 +1,52 @@
+NONIVERUS POSTERTILE — Playful Studio v0.9.1 DEV
+==============================================
+ATENÇÃO: CÓDIGO-FONTE PARA WINDOWS. NÃO INCLUI EXECUTÁVEIS/INSTALADORES COMPILADOS.
+
+O que mudou:
+* Novo tema Playful Studio, selecionável em Definições → Tema visual e,
+  enquanto ativo, através de um seletor no cabeçalho.
+* Paleta azul-céu, coral, amarelo e menta, cartões arredondados e botões de destaque.
+* Dashboard com ilustração espacial inspirada no mockup aprovado.
+* Painel lateral de ajuda com personagem ilustrada em janelas suficientemente largas.
+* Novo tema aplicado também às cores do editor de composição Qt Widgets.
+* Os temas Midnight Sapphire e Pearl Titanium continuam disponíveis.
+* Textos novos traduzidos para PT-PT, EN, ES, FR e IT.
+* A imagem de demonstração não é um projeto e NUNCA é exportada para PDF.
+* Motor de impressão, calibração, QSettings, licenciamento offline e edições preservados.
+* Atualização do número de versão para v0.9.1, preservando AppIds das edições
+  Owner e Private Preview, de modo a não perder as instalações/licenças existentes.
+
+APLICAR COM SEGURANÇA:
+1. Descomprimir este ZIP, por exemplo, em:
+   C:\NONIVERUS\PATCH_PLAYFUL_V091
+2. Confirmar que a pasta DEV é:
+   C:\NONIVERUS\NONIVERUS_POSTERTILE_DEV
+3. Abrir PowerShell e executar:
+   powershell.exe -NoProfile -ExecutionPolicy Bypass -File "C:\NONIVERUS\PATCH_PLAYFUL_V091\APLICAR_PLAYFUL_STUDIO_v091.ps1"
+   O script verifica primeiro, faz backup de todos os ficheiros alterados
+   em %%LOCALAPPDATA%%\NONIVERUS\PosterTile\build_backups\Playful_v091_...
+   e só depois aplica os fragmentos reconhecidos, preservando outras alterações.
+4. Não apagar a pasta DEV, as chaves Ed25519, as licenças ou os instaladores existentes.
+5. Testar primeiro pelo Python:
+   cd C:\NONIVERUS\NONIVERUS_POSTERTILE_DEV
+   .\.venv\Scripts\python.exe main.py
+   Selecionar Definições > Tema visual > Playful Studio.
+6. Compilar a Owner, testar a aplicação e a exportação PDF:
+   .\CONSTRUIR_OWNER_WINDOWS.cmd
+7. Só quando a Owner estiver aprovada compilar a Private Preview:
+   .\CONSTRUIR_PREVIEW_WINDOWS.cmd
+   Testar atualização/reativação com a licença existente.
+8. O nome esperado dos instaladores inclui v0.9.1:
+   release_editions\NONIVERUS_PosterTile_Owner_Setup_v0.9.1.exe
+   release_editions\NONIVERUS_PosterTile_PrivatePreview_Setup_v0.9.1.exe
+
+O aspeto no Windows é adaptativo e não será pixel-a-pixel igual à ilustração
+conceptual do mockup, embora se utilizem a arte aprovada e a sua paleta.
+Este pacote foi testado estaticamente e com os testes Python existentes.
+É indispensável validar o QML a abrir e a mudança entre temas no Windows.
+É necessário que a licença Ed25519 já instalada continue válida.
+
+CÓDIGO-FONTE / GIT:
+Aplicar primeiro e testar na pasta DEV. Após validação, copiar apenas
+código + assets/playful para C:\NONIVERUS\NONIVERUS_POSTERTILE, branch dev.
+Nunca adicionar chaves privadas, issued_licenses.jsonl, EXE, DLL ou backups.

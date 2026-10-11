@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""NONIVERUS PosterTile Luxury Studio v0.9.0.2.2 — Qt Quick front-end."""
+"""NONIVERUS PosterTile Luxury Studio v0.9.1.2 — Qt Quick front-end."""
 import os, sys, math, tempfile, atexit, shutil
 from pathlib import Path
 from PySide6.QtCore import QObject, Signal, Property, Slot, QUrl, QSettings
@@ -68,7 +68,7 @@ class Studio(QObject):
         self._settings=QSettings("NONIVERUS","PosterTileLuxuryStudio")
         self._selected_printer=self._settings.value("printer/selected","")
         theme=self._settings.value("appearance/theme","Midnight Sapphire")
-        self._theme=theme if theme in ("Midnight Sapphire","Pearl Titanium") else "Midnight Sapphire"
+        self._theme=theme if theme in ("Midnight Sapphire","Pearl Titanium","Playful Studio") else "Midnight Sapphire"
         lang=self._settings.value("appearance/language","pt-PT")
         self._language=lang if lang in ("pt-PT","en","es","fr","it") else "pt-PT"
     @Property(str, notify=changed)
@@ -83,7 +83,7 @@ class Studio(QObject):
     def theme(self): return self._theme
     @Slot(str)
     def setTheme(self,theme):
-        if theme not in ("Midnight Sapphire","Pearl Titanium"): return
+        if theme not in ("Midnight Sapphire","Pearl Titanium","Playful Studio"): return
         self._theme=theme
         self._settings.setValue("appearance/theme",theme)
         self._settings.sync()
@@ -352,12 +352,15 @@ class Studio(QObject):
         dlg.setWindowTitle("NONIVERUS | "+labels[0])
         dlg.resize(1180,750);dlg.setMinimumSize(880,570)
         settings=QSettings("NONIVERUS","PosterTile")
-        light=self._theme=="Pearl Titanium"
-        bg="#E9E5DE" if light else "#101B2C"
-        panel="#D9E1E6" if light else "#1A2A3F"
-        ink="#142D4A" if light else "#F2F4F6"
-        muted="#55708A" if light else "#A8B9CE"
-        bronze="#BB7745" if light else "#D29B67"
+        light=self._theme in ("Pearl Titanium","Playful Studio")
+        if self._theme == "Playful Studio":
+            bg, panel, ink, muted, bronze = "#F1F8FF", "#FFFFFF", "#09265C", "#5875A3", "#FF7651"
+        else:
+            bg="#E9E5DE" if light else "#101B2C"
+            panel="#D9E1E6" if light else "#1A2A3F"
+            ink="#142D4A" if light else "#F2F4F6"
+            muted="#55708A" if light else "#A8B9CE"
+            bronze="#BB7745" if light else "#D29B67"
         dlg.setStyleSheet("""
           QDialog#compositionEditor { background:%s; color:%s; }
           QDialog#compositionEditor QLabel { color:%s; background:transparent; }
@@ -917,7 +920,59 @@ class Studio(QObject):
                 self.notice.emit(f"PDF exportado com sucesso.\n\n{p['pages']} folhas de {p['orientation']}\n\nImprime a 100% / Tamanho real. Não uses «Ajustar à página».")
         except Exception as ex:self.notice.emit(f"Erro ao exportar PDF:\n{ex}")
 
+# NONIVERUS TITLEBAR v0.9.1.4 BEGIN
+# Windows 11 desktop-window-manager integration. This only changes the native
+# title bar; it does not modify the Qt window flags or the Windows taskbar.
+_NATIVE_TITLEBAR_PALETTE = {
+    "Playful Studio": ("#E7F4FF", "#173B75"),
+    "Pearl Titanium": ("#E9E5DE", "#142D4A"),
+    "Midnight Sapphire": ("#101B2C", "#F2F4F6"),
+}
+
+def _native_titlebar_colorref(hex_color):
+    """Convert #RRGGBB to Win32 COLORREF 0x00BBGGRR."""
+    rgb = hex_color.lstrip("#")
+    return int(rgb[4:6] + rgb[2:4] + rgb[:2], 16)
+
+def _apply_native_titlebar_colors(window, theme):
+    if sys.platform != "win32":
+        return False
+    try:
+        import ctypes
+        from ctypes import wintypes
+        hwnd = int(window.winId())
+        if not hwnd:
+            return False
+        caption, foreground = _NATIVE_TITLEBAR_PALETTE.get(
+            theme, _NATIVE_TITLEBAR_PALETTE["Midnight Sapphire"])
+        dwm = ctypes.WinDLL("dwmapi").DwmSetWindowAttribute
+        dwm.argtypes = (wintypes.HWND, wintypes.DWORD,
+                        ctypes.c_void_p, wintypes.DWORD)
+        dwm.restype = ctypes.c_long
+
+        # Keep native buttons; only choose the light/dark caption rendering.
+        dark = ctypes.c_int(1 if theme == "Midnight Sapphire" else 0)
+        dwm(wintypes.HWND(hwnd), 20, ctypes.byref(dark),
+            ctypes.sizeof(dark))
+
+        def set_color(attribute, color):
+            value = ctypes.c_uint32(_native_titlebar_colorref(color))
+            return dwm(wintypes.HWND(hwnd), attribute,
+                       ctypes.byref(value), ctypes.sizeof(value)) == 0
+
+        # DWMWA_CAPTION_COLOR=35, DWMWA_TEXT_COLOR=36.
+        # Windows 11 build 22000+; unsupported systems simply keep native UI.
+        return set_color(35, caption) and set_color(36, foreground)
+    except (OSError, AttributeError, ValueError, TypeError):
+        return False
+# NONIVERUS TITLEBAR v0.9.1.4 END
+
 def main():
+    # v0.9.1.3: Qt Quick Controls Basic suporta indicator/contentItem
+    # dos controlos QML personalizados (evita avisos do estilo nativo).
+    # Deve ser configurado ANTES de criar o motor QQmlApplicationEngine.
+    from PySide6.QtQuickControls2 import QQuickStyle
+    QQuickStyle.setStyle("Basic")
     app=QApplication(sys.argv)
     app.setOrganizationName("NONIVERUS")
     app.setApplicationName("NONIVERUS PosterTile Luxury Studio")
@@ -938,6 +993,27 @@ def main():
     if not engine.rootObjects():
         print("ERRO: Não foi possível carregar ui/Main.qml",file=sys.stderr)
         return 1
+    # NONIVERUS TITLEBAR v0.9.1.4 HOOK BEGIN
+    # QML has been loaded; synchronize native Windows caption with the theme.
+    from PySide6.QtCore import QTimer
+    main_window = engine.rootObjects()[0]
+    titlebar_cache = [None]
+    def refresh_native_titlebar(force=False):
+        if sys.platform != "win32":
+            return
+        key = (int(main_window.winId()), bridge.theme)
+        if force or key != titlebar_cache[0]:
+            titlebar_cache[0] = key
+            _apply_native_titlebar_colors(main_window, bridge.theme)
+    bridge.changed.connect(refresh_native_titlebar)
+    if hasattr(main_window, "visibilityChanged"):
+        main_window.visibilityChanged.connect(
+            lambda *_: QTimer.singleShot(0, lambda: refresh_native_titlebar(True)))
+    if hasattr(main_window, "windowStateChanged"):
+        main_window.windowStateChanged.connect(
+            lambda *_: QTimer.singleShot(0, lambda: refresh_native_titlebar(True)))
+    QTimer.singleShot(0, refresh_native_titlebar)
+    # NONIVERUS TITLEBAR v0.9.1.4 HOOK END
     return app.exec()
 
 if __name__=="__main__":sys.exit(main())

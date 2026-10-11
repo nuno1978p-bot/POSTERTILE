@@ -6,10 +6,13 @@ import QtQuick.Effects
 ApplicationWindow {
     id: win
     width: 1500; height: 920
-    minimumWidth: 1100; minimumHeight: 700
+    minimumWidth: 1100; minimumHeight: 600
     visible: true
-    title: "NONIVERUS PosterTile Luxury Studio v0.9.0.2  /  " + studio.editionName
-    color: (win.light ? "#E7E3DB" : "#080E19")
+    // v0.9.1.2: janela nativa maximizada, não em ecrã inteiro.
+    // Respeita a barra de tarefas; permite minimizar e restaurar.
+    Component.onCompleted: win.showMaximized()
+    title: "NONIVERUS PosterTile Luxury Studio v0.9.1  /  " + studio.editionName
+    color: win.playful ? "#E8F5FF" : (win.light ? "#E7E3DB" : "#080E19")
     property var dictionary: {"pt-PT": {"Cria sem limites.": "Cria sem limites.", "Precisão profissional em cada folha.": "Precisão profissional em cada folha.", "＋   IMPORTAR IMAGEM": "＋   IMPORTAR IMAGEM", "FORMATO FINAL": "FORMATO FINAL", "Altura (cm)": "Altura (cm)", "Largura (cm)": "Largura (cm)", "PROPORÇÃO PRESERVADA": "PROPORÇÃO PRESERVADA", "Sem deformar a imagem original": "Sem deformar a imagem original", "PAPEL DE IMPRESSÃO  /  SELEÇÃO MANUAL": "PAPEL DE IMPRESSÃO  /  SELEÇÃO MANUAL", "02  /  PRINT ENGINE": "02  /  PRINT ENGINE", "OCULTAR  −": "OCULTAR  −", "AVANÇADO  ＋": "AVANÇADO  ＋", "Método de montagem": "Método de montagem", "Margem (mm)": "Margem (mm)", "Sobreposição (mm)": "Sobreposição (mm)", "PLANO DE IMPRESSÃO": "PLANO DE IMPRESSÃO", "EXPORTAR PDF  ↗": "EXPORTAR PDF  ↗", "O teu projeto, em grande.": "O teu projeto, em grande.", "◇   VISTA PLANA": "◇   VISTA PLANA", "◇   PERSPETIVA": "◇   PERSPETIVA", "＋\\n\\nIMPORTA A TUA IMAGEM\\nPARA COMEÇAR": "＋\\n\\nIMPORTA A TUA IMAGEM\\nPARA COMEÇAR", "Visualização ilustrativa  ·  O PDF usa coordenadas físicas exatas": "Visualização ilustrativa  ·  O PDF usa coordenadas físicas exatas", "●  VISTA DE MONTAGEM": "●  VISTA DE MONTAGEM", "PÁGINAS": "PÁGINAS", "01  /  PROJECT SETUP": "01  /  PROJECT SETUP"}, "en": {"Cria sem limites.": "Create without limits.", "Precisão profissional em cada folha.": "Professional precision on every sheet.", "＋   IMPORTAR IMAGEM": "＋   IMPORT IMAGE", "FORMATO FINAL": "FINAL SIZE", "Altura (cm)": "Height (cm)", "Largura (cm)": "Width (cm)", "PROPORÇÃO PRESERVADA": "ASPECT RATIO LOCKED", "Sem deformar a imagem original": "Original image not distorted", "PAPEL DE IMPRESSÃO  /  SELEÇÃO MANUAL": "PRINT PAPER  /  MANUAL SELECTION", "02  /  PRINT ENGINE": "02  /  PRINT ENGINE", "OCULTAR  −": "HIDE  −", "AVANÇADO  ＋": "ADVANCED  ＋", "Método de montagem": "Assembly method", "Margem (mm)": "Margin (mm)", "Sobreposição (mm)": "Overlap (mm)", "PLANO DE IMPRESSÃO": "PRINT PLAN", "EXPORTAR PDF  ↗": "EXPORT PDF  ↗", "O teu projeto, em grande.": "Your project, larger than life.", "◇   VISTA PLANA": "◇   FLAT VIEW", "◇   PERSPETIVA": "◇   PERSPECTIVE", "＋\\n\\nIMPORTA A TUA IMAGEM\\nPARA COMEÇAR": "＋\\n\\nIMPORT AN IMAGE\\nTO START", "Visualização ilustrativa  ·  O PDF usa coordenadas físicas exatas": "Illustrative preview · PDF uses precise physical coordinates", "●  VISTA DE MONTAGEM": "●  ASSEMBLY VIEW", "PÁGINAS": "PAGES", "01  /  PROJECT SETUP": "01  /  PROJECT SETUP"}, "es": {"Cria sem limites.": "Crea sin límites.", "Precisão profissional em cada folha.": "Precisión profesional en cada hoja.", "＋   IMPORTAR IMAGEM": "＋   IMPORTAR IMAGEN", "FORMATO FINAL": "TAMAÑO FINAL", "Altura (cm)": "Altura (cm)", "Largura (cm)": "Anchura (cm)", "PROPORÇÃO PRESERVADA": "PROPORCIÓN CONSERVADA", "Sem deformar a imagem original": "Sin deformar la imagen", "PAPEL DE IMPRESSÃO  /  SELEÇÃO MANUAL": "PAPEL DE IMPRESIÓN  /  SELECCIÓN", "02  /  PRINT ENGINE": "02  /  MOTOR DE IMPRESIÓN", "OCULTAR  −": "OCULTAR  −", "AVANÇADO  ＋": "AVANZADO  ＋", "Método de montagem": "Método de montaje", "Margem (mm)": "Margen (mm)", "Sobreposição (mm)": "Solapamiento (mm)", "PLANO DE IMPRESSÃO": "PLAN DE IMPRESIÓN", "EXPORTAR PDF  ↗": "EXPORTAR PDF  ↗", "O teu projeto, em grande.": "Tu proyecto, a lo grande.", "◇   VISTA PLANA": "◇   VISTA PLANA", "◇   PERSPETIVA": "◇   PERSPECTIVA", "＋\\n\\nIMPORTA A TUA IMAGEM\\nPARA COMEÇAR": "＋\\n\\nIMPORTA UNA IMAGEN\\nPARA EMPEZAR", "Visualização ilustrativa  ·  O PDF usa coordenadas físicas exatas": "Vista ilustrativa · El PDF usa coordenadas físicas exactas", "●  VISTA DE MONTAGEM": "●  VISTA DE MONTAJE", "PÁGINAS": "PÁGINAS", "01  /  PROJECT SETUP": "01  /  CONFIGURACIÓN"}, "fr": {"Cria sem limites.": "Créez sans limites.", "Precisão profissional em cada folha.": "Précision professionnelle sur chaque feuille.", "＋   IMPORTAR IMAGEM": "＋   IMPORTER UNE IMAGE", "FORMATO FINAL": "FORMAT FINAL", "Altura (cm)": "Hauteur (cm)", "Largura (cm)": "Largeur (cm)", "PROPORÇÃO PRESERVADA": "PROPORTIONS CONSERVÉES", "Sem deformar a imagem original": "Image originale non déformée", "PAPEL DE IMPRESSÃO  /  SELEÇÃO MANUAL": "PAPIER  /  SÉLECTION MANUELLE", "02  /  PRINT ENGINE": "02  /  MOTEUR D’IMPRESSION", "OCULTAR  −": "MASQUER  −", "AVANÇADO  ＋": "AVANCÉ  ＋", "Método de montagem": "Méthode d’assemblage", "Margem (mm)": "Marge (mm)", "Sobreposição (mm)": "Chevauchement (mm)", "PLANO DE IMPRESSÃO": "PLAN D’IMPRESSION", "EXPORTAR PDF  ↗": "EXPORTER PDF  ↗", "O teu projeto, em grande.": "Votre projet en grand.", "◇   VISTA PLANA": "◇   VUE PLANE", "◇   PERSPETIVA": "◇   PERSPECTIVE", "＋\\n\\nIMPORTA A TUA IMAGEM\\nPARA COMEÇAR": "＋\\n\\nIMPORTEZ UNE IMAGE\\nPOUR COMMENCER", "Visualização ilustrativa  ·  O PDF usa coordenadas físicas exatas": "Aperçu illustratif · Le PDF utilise des coordonnées physiques exactes", "●  VISTA DE MONTAGEM": "●  VUE D’ASSEMBLAGE", "PÁGINAS": "PAGES", "01  /  PROJECT SETUP": "01  /  CONFIGURATION"}, "it": {"Cria sem limites.": "Crea senza limiti.", "Precisão profissional em cada folha.": "Precisione professionale su ogni foglio.", "＋   IMPORTAR IMAGEM": "＋   IMPORTA IMMAGINE", "FORMATO FINAL": "FORMATO FINALE", "Altura (cm)": "Altezza (cm)", "Largura (cm)": "Larghezza (cm)", "PROPORÇÃO PRESERVADA": "PROPORZIONI CONSERVATE", "Sem deformar a imagem original": "Immagine originale non deformata", "PAPEL DE IMPRESSÃO  /  SELEÇÃO MANUAL": "CARTA  /  SCELTA MANUALE", "02  /  PRINT ENGINE": "02  /  MOTORE DI STAMPA", "OCULTAR  −": "NASCONDI  −", "AVANÇADO  ＋": "AVANZATE  ＋", "Método de montagem": "Metodo di montaggio", "Margem (mm)": "Margine (mm)", "Sobreposição (mm)": "Sovrapposizione (mm)", "PLANO DE IMPRESSÃO": "PIANO DI STAMPA", "EXPORTAR PDF  ↗": "ESPORTA PDF  ↗", "O teu projeto, em grande.": "Il tuo progetto in grande.", "◇   VISTA PLANA": "◇   VISTA PIANA", "◇   PERSPETIVA": "◇   PROSPETTIVA", "＋\\n\\nIMPORTA A TUA IMAGEM\\nPARA COMEÇAR": "＋\\n\\nIMPORTA UN’IMMAGINE\\nPER INIZIARE", "Visualização ilustrativa  ·  O PDF usa coordenadas físicas exatas": "Anteprima illustrativa · Il PDF usa coordinate fisiche esatte", "●  VISTA DE MONTAGEM": "●  VISTA MONTAGGIO", "PÁGINAS": "PAGINE", "01  /  PROJECT SETUP": "01  /  CONFIGURAZIONE"}}
     property var extraTranslations: ({
       "en": {"CALIBRAR":"CALIBRATE","Calibração não selecionada":"No calibration selected","ATELIER  /  LIVE CANVAS":"STUDIO  /  LIVE CANVAS","PROFESSIONAL OUTPUT":"PROFESSIONAL OUTPUT","PDF pronto:":"PDF ready:","Personalizado":"Custom","vertical":"portrait","horizontal":"landscape","Sobrepor":"Overlap","Cortar e unir":"Trim and join","SELECIONADO: ":"SELECTED: "," · podes alterar a orientação em baixo.":" · orientation can be changed below.","AUTO: escolhe A4 ou A3 pela menor quantidade de folhas.":"AUTO: chooses A4 or A3 to minimise sheets.","01  /  ORIGEM DO PROJETO":"01  /  PROJECT SOURCE","IMAGEM":"IMAGE","TEXTO GIGANTE":"LARGE TEXT","Cria uma frase usando as fontes do teu computador.":"Create a message using fonts installed on your computer."},
@@ -51,35 +54,111 @@ ApplicationWindow {
         }
         return (translations[studio.language] || translations["pt-PT"])[key] || key
     }
-    property bool light: studio.theme === "Pearl Titanium"
-    property color ink: (win.light ? "#25364A" : "#EEF3FB")
-    property color muted: (win.light ? "#576879" : "#8795AD")
-    property color line: (win.light ? "#BBC4CC" : "#273449")
-    property color gold: (win.light ? "#B97543" : "#E9A66B")
-    property color blue: (win.light ? "#4772AE" : "#5E92EC")
+    // Playful Studio is a visual option, never an edition or print-engine mode.
+    function playfulCopy(key) {
+        var labels = {
+          "pt-PT": {header:"IDEIAS EM GRANDE",intro:"Cria cartazes grandes a partir de imagens, texto e composição.",a:"Ideal para escolas, salas de aula e eventos",b:"Imprime em várias folhas e monta facilmente",c:"Usa as tuas próprias imagens ou cria composições",d:"Personaliza tamanhos e acabamentos",demo:"EXEMPLO ILUSTRATIVO",inspire:"INSPIRA-TE",status:"Experimenta importar uma imagem ou criar um cartaz com texto.",output:"SAÍDA PROFISSIONAL"},
+          "en": {header:"BIG IDEAS",intro:"Make giant posters with images, text and compositions.",a:"Great for classrooms and events",b:"Print on multiple pages and assemble",c:"Use your own pictures or compositions",d:"Choose custom sizes and finishes",demo:"ILLUSTRATIVE SAMPLE",inspire:"GET INSPIRED",status:"Import an image or create a poster with text.",output:"PROFESSIONAL OUTPUT"},
+          "es": {header:"GRANDES IDEAS",intro:"Crea carteles gigantes con imágenes y texto.",a:"Perfecto para colegios y eventos",b:"Imprime en varias hojas y monta fácilmente",c:"Utiliza tus imágenes y composiciones",d:"Personaliza tamaños y acabados",demo:"EJEMPLO ILUSTRATIVO",inspire:"INSPÍRATE",status:"Importa una imagen o crea un cartel con texto.",output:"SALIDA PROFESIONAL"},
+          "fr": {header:"GRANDES IDÉES",intro:"Créez de grandes affiches avec des images et du texte.",a:"Idéal pour écoles et événements",b:"Imprimez sur plusieurs pages et assemblez",c:"Utilisez vos images et compositions",d:"Personnalisez dimensions et finitions",demo:"EXEMPLE ILLUSTRATIF",inspire:"INSPIREZ-VOUS",status:"Importez une image ou créez une affiche.",output:"EXPORTATION PROFESSIONNELLE"},
+          "it": {header:"GRANDI IDEE",intro:"Crea poster giganti con immagini e testo.",a:"Ideale per scuole ed eventi",b:"Stampa su più fogli e assembla",c:"Usa immagini e composizioni personali",d:"Personalizza dimensioni e finiture",demo:"ESEMPIO ILLUSTRATIVO",inspire:"ISPIRATI",status:"Importa un'immagine o crea un poster.",output:"OUTPUT PROFESSIONALE"}
+        }
+        return (labels[studio.language] || labels["pt-PT"])[key] || key
+    }
+    property bool playful: studio.theme === "Playful Studio"
+    property bool light: studio.theme !== "Midnight Sapphire"
+    property bool playfulDemo: win.playful && studio.imageUrl.length === 0
+    property color ink: win.playful ? "#09265C" : (win.light ? "#25364A" : "#EEF3FB")
+    property color muted: win.playful ? "#526D9D" : (win.light ? "#576879" : "#8795AD")
+    property color line: win.playful ? "#C4D9F3" : (win.light ? "#BBC4CC" : "#273449")
+    property color gold: win.playful ? "#FF7543" : (win.light ? "#B97543" : "#E9A66B")
+    property color blue: win.playful ? "#117CEB" : (win.light ? "#4772AE" : "#5E92EC")
     property bool details: false
     property int mode: 0
     property bool perspective: true
     property real tileZoom: 1
 
     component Caption: Text {
-        color: (win.light ? "#63758B" : "#899BB7"); font.pixelSize: 11; font.weight: Font.DemiBold
+        color: win.playful ? "#3563A0" : (win.light ? "#63758B" : "#899BB7"); font.pixelSize: 11; font.weight: Font.DemiBold
         font.letterSpacing: 2.1
+    }
+    // POLISH v0.9.1.1: playful section tabs, purely visual.
+    component PlayfulSection: RowLayout {
+        id: ps
+        property string title: ""
+        property string symbol: "✦"
+        property color accent: "#117CEB"
+        Layout.fillWidth: true
+        spacing: 10
+        Rectangle {
+            Layout.preferredWidth: 32; Layout.preferredHeight: 32
+            radius: 10
+            color: Qt.lighter(ps.accent, 2.65)
+            border.color: Qt.lighter(ps.accent, 1.95)
+            Text {
+                anchors.centerIn: parent
+                text: ps.symbol; color: ps.accent
+                font.pixelSize: 17; font.weight: Font.Bold
+            }
+        }
+        Text {
+            Layout.fillWidth: true
+            text: ps.title
+            color: "#24569D"
+            font.pixelSize: 11
+            font.weight: Font.Bold
+            font.letterSpacing: 1.6
+            elide: Text.ElideRight
+            verticalAlignment: Text.AlignVCenter
+        }
+    }
+    component PlayfulBenefit: RowLayout {
+        id: pb
+        property string benefit: ""
+        property color accent: "#18BFA6"
+        Layout.fillWidth: true
+        Layout.minimumWidth: 0
+        spacing: 9
+        Rectangle {
+            Layout.preferredWidth: 24; Layout.preferredHeight: 24
+            radius: 12; color: pb.accent
+            Text { anchors.centerIn: parent; text: "✓"; color: "white"; font.bold: true; font.pixelSize: 15 }
+        }
+        Text {
+            Layout.fillWidth: true
+            Layout.minimumWidth: 0
+            text: pb.benefit
+            color: "#365887"
+            wrapMode: Text.WordWrap
+            font.pixelSize: win.width < 1270 ? 11 : 12
+            lineHeight: 1.12
+        }
+    }
+    Gradient {
+        id: playfulButtonGradient
+        GradientStop { position: 0; color: "#FFAC47" }
+        GradientStop { position: 1; color: "#FF547D" }
     }
     component ActionButton: Button {
         id: ab
         property bool primary: false
         implicitHeight: 46
         background: Rectangle {
-            radius: 12
-            color: ab.down ? (win.light ? "#A96B40" : "#CE8F5B") : (ab.primary ? (win.light ? "#B97543" : "#E9A66B") : (ab.hovered ? (win.light ? "#C7D2DA" : "#23334B") : (win.light ? "#D7DEE2" : "#1A283D")))
-            border.color: ab.primary ? (win.light ? "#BD814E" : "#F5BF8A") : (win.light ? "#A7B5C0" : "#34465E")
+            radius: win.playful ? 15 : 12
+            color: win.playful ? (ab.primary ? "#FF8053" : (ab.hovered ? "#D6ECFF" : "#FFFFFF")) :
+                (ab.down ? (win.light ? "#A96B40" : "#CE8F5B") :
+                (ab.primary ? (win.light ? "#B97543" : "#E9A66B") :
+                (ab.hovered ? (win.light ? "#C7D2DA" : "#23334B") : (win.light ? "#D7DEE2" : "#1A283D"))))
+            gradient: win.playful && ab.primary ? playfulButtonGradient : null
+            border.color: win.playful ? (ab.primary ? "#FF8F50" : "#C0D7F6") :
+                (ab.primary ? (win.light ? "#BD814E" : "#F5BF8A") : (win.light ? "#A7B5C0" : "#34465E"))
             border.width: 1
             Behavior on color { ColorAnimation { duration: 150 } }
         }
         contentItem: Text {
             text: ab.text; font.pixelSize: 13; font.weight: Font.DemiBold
-            color: ab.primary ? (win.light ? "#18283C" : "#1B1720") : (win.light ? "#263B53" : "#EAF1FC")
+            color: win.playful ? (ab.primary ? "#FFFFFF" : "#123B7A") :
+                (ab.primary ? (win.light ? "#18283C" : "#1B1720") : (win.light ? "#263B53" : "#EAF1FC"))
             horizontalAlignment: Text.AlignHCenter; verticalAlignment: Text.AlignVCenter
         }
     }
@@ -92,19 +171,22 @@ ApplicationWindow {
         implicitHeight: 54
         Layout.minimumWidth: 0
         background: Rectangle {
-            radius: 12
-            color: cnb.down ? (win.light ? "#A96B40" : "#CE8F5B")
+            radius: win.playful ? 14 : 12
+            color: win.playful ? (cnb.primary ? "#FFE5B6" : cnb.hovered ? "#D7EBFF" : "#FFFFFF") :
+                cnb.down ? (win.light ? "#A96B40" : "#CE8F5B")
                 : (cnb.primary ? (win.light ? "#B97543" : "#E9A66B")
                 : (cnb.hovered ? (win.light ? "#C7D2DA" : "#23334B")
                 : (win.light ? "#D7DEE2" : "#1A283D")))
-            border.color: cnb.primary ? (win.light ? "#BD814E" : "#F5BF8A")
+            border.color: win.playful ? (cnb.primary ? "#FFC35D" : "#C0D8F4") :
+                cnb.primary ? (win.light ? "#BD814E" : "#F5BF8A")
                 : (win.light ? "#A7B5C0" : "#34465E")
             border.width: 1
             Behavior on color { ColorAnimation { duration: 150 } }
         }
         contentItem: Text {
             text: cnb.text
-            color: cnb.primary ? (win.light ? "#18283C" : "#1B1720")
+            color: win.playful ? "#133978" :
+                cnb.primary ? (win.light ? "#18283C" : "#1B1720")
                 : (win.light ? "#263B53" : "#EAF1FC")
             font.pixelSize: 12
             font.weight: Font.DemiBold
@@ -122,22 +204,33 @@ ApplicationWindow {
         color: (win.light ? "#25364A" : "#EFF4FF"); selectedTextColor: (win.light ? "#FFFFFF" : "#FFFFFF"); selectionColor: (win.light ? "#7594B8" : "#385F9E")
         font.pixelSize: 15
         padding: 12
-        background: Rectangle { color: (win.light ? "#E0E5E7" : "#0C1728"); radius: 11; border.color: parent.activeFocus ? (win.light ? "#B97543" : "#E9A66B") : (win.light ? "#9AAAB8" : "#35445B") }
+        background: Rectangle { color: win.playful ? "#FFFFFF" : (win.light ? "#E0E5E7" : "#0C1728"); radius: win.playful ? 13 : 11; border.color: win.playful ? (parent.activeFocus ? "#FF9A55" : "#B7D2F0") : (parent.activeFocus ? (win.light ? "#B97543" : "#E9A66B") : (win.light ? "#9AAAB8" : "#35445B")) }
     }
     component LuxuryCombo: ComboBox {
         id: cb
         property bool localizeChoices: false
+        property bool headerTheme: false
         implicitHeight: 44
         font.pixelSize: 13
         background: Rectangle {
-            color: (win.light ? "#D7DFE3" : "#101F32"); border.color: cb.activeFocus ? (win.light ? "#B97543" : "#E9A66B") : (win.light ? "#A5B2BF" : "#36475E"); radius: 10
+            color: win.playful ? "#FFFFFF" : (win.light ? "#D7DFE3" : "#101F32"); border.color: win.playful ? "#BED6F2" : (cb.activeFocus ? (win.light ? "#B97543" : "#E9A66B") : (win.light ? "#A5B2BF" : "#36475E")); radius: win.playful ? 14 : 10
         }
-        contentItem: Text { leftPadding: 14; rightPadding: 28; text: cb.localizeChoices ? win.choice(cb.currentText) : cb.displayText; color: (win.light ? "#26384A" : "#EAF0FB"); verticalAlignment: Text.AlignVCenter; font.pixelSize: 13; elide: Text.ElideRight }
+        contentItem: Text { leftPadding: cb.headerTheme ? 37 : 14; rightPadding: 28; text: cb.localizeChoices ? win.choice(cb.currentText) : cb.displayText; color: (win.light ? "#26384A" : "#EAF0FB"); verticalAlignment: Text.AlignVCenter; font.pixelSize: 13; elide: Text.ElideRight }
+        Text {
+            visible: cb.headerTheme
+            text: win.playful ? "✿" : (win.light ? "✧" : "☾")
+            color: win.playful ? "#FF648B" : (win.light ? "#B97543" : "#E9BA88")
+            font.pixelSize: 18
+            z: 2
+            anchors.left: parent.left
+            anchors.leftMargin: 12
+            anchors.verticalCenter: parent.verticalCenter
+        }
         indicator: Text { text: "⌄"; color: (win.light ? "#B97543" : "#E9A66B"); font.pixelSize: 20; anchors.right: parent.right; anchors.rightMargin: 13; anchors.verticalCenter: parent.verticalCenter }
         popup: Popup {
             y: cb.height+5; width: cb.width; implicitHeight: contentItem.implicitHeight+8
             padding: 4
-            background: Rectangle { color: (win.light ? "#E1E5E8" : "#18283E"); radius: 9; border.color: (win.light ? "#A5B3C1" : "#445670") }
+            background: Rectangle { color: win.playful ? "#F5FBFF" : (win.light ? "#E1E5E8" : "#18283E"); radius: 11; border.color: win.playful ? "#B9D2F1" : (win.light ? "#A5B3C1" : "#445670") }
             contentItem: ListView {
                 implicitHeight: contentHeight
                 model: cb.popup.visible ? cb.delegateModel : null
@@ -157,29 +250,76 @@ ApplicationWindow {
         id: glow
         width: 730; height: 730; radius: 365
         x: win.width-450; y: -440
-        color: (win.light ? "#D9E0E4" : "#15294A"); opacity: .32
+        color: win.playful ? "#B5DDFF" : (win.light ? "#D9E0E4" : "#15294A"); opacity: .32
+    }
+    // Pastel ornamental shapes are decorative and do not receive mouse events.
+    Rectangle {
+        visible: win.playful
+        width: 250; height: 110; x: win.width*.44; y: -60
+        radius: 65; rotation: -18; color: "#C5BAFF"; opacity: .42
     }
     ColumnLayout {
-        anchors.fill: parent; anchors.margins: 26; spacing: 17
+        anchors.fill: parent; anchors.margins: win.playful ? 18 : 26; spacing: win.playful ? 12 : 17
         // Top bar
         RowLayout {
-            Layout.fillWidth: true; Layout.preferredHeight: 65; spacing: 16
+            Layout.fillWidth: true; Layout.preferredHeight: win.playful ? 94 : 65; spacing: win.playful ? 13 : 16
             Rectangle {
-                width: 46; height: 46; radius: 15
-                color: (win.light ? "#D1DADE" : "#14253A"); border.color: (win.light ? "#A3B3C2" : "#395372")
-                Image { anchors.fill: parent; anchors.margins: 1; source: "../assets/branding/postertile_icon.png"; fillMode: Image.PreserveAspectFit; smooth: true }
+                Layout.preferredWidth: win.playful ? 76 : 46
+                Layout.preferredHeight: win.playful ? 76 : 46
+                radius: win.playful ? 23 : 15
+                color: win.playful ? "#EFF8FF" : (win.light ? "#D1DADE" : "#14253A")
+                border.color: win.playful ? "#C3DFFD" : (win.light ? "#A3B3C2" : "#395372")
+                Image { anchors.fill: parent; anchors.margins: 1; source: win.playful ? "../assets/playful/playful_icon.png" : "../assets/branding/postertile_icon.png"; fillMode: Image.PreserveAspectFit; smooth: true }
             }
             ColumnLayout {
                 spacing: 1
-                Text { text: "NONIVERUS"; color: (win.light ? "#25364A" : "#F6F8FE"); font.family: "Georgia"; font.pixelSize: 25; font.letterSpacing: 3.7 }
-                Caption { text: "POSTERTILE  /  LUXURY STUDIO" }
+                Text { text: "NONIVERUS"; color: win.ink; font.family: win.playful ? "Segoe UI" : "Georgia"; font.weight: win.playful ? Font.Bold : Font.Normal; font.pixelSize: win.playful ? 29 : 25; font.letterSpacing: win.playful ? 0.2 : 3.7 }
+                RowLayout {
+                    visible: win.playful; spacing: 9
+                    Text { text: "PosterTile"; font.pixelSize: 19; font.weight: Font.Bold; color: "#FF638A" }
+                    Rectangle {
+                        Layout.preferredWidth: 105; Layout.preferredHeight: 24
+                        radius: 12; color: "#FFF0CD"
+                        Text { anchors.centerIn: parent; text: "LUXURY STUDIO"; color: "#BE6F24"; font.pixelSize: 10; font.bold: true }
+                    }
+                }
+                Caption { visible: !win.playful; text: "POSTERTILE  /  LUXURY STUDIO" }
+            }
+            Text {
+                visible: win.playful && win.width >= 1320
+                text: "✦  Grandes ideias\nem grandes formatos!"
+                font.family: "Segoe UI"; font.italic: true; font.bold: true
+                font.pixelSize: 16; color: "#134CBA"
             }
             Item { Layout.fillWidth: true }
-            Rectangle { width: 7; height: 7; radius: 4; color: (win.light ? "#AF7045" : "#DFA36F") }
-            Text { text: "PRECISION PRINTING"; color: muted; font.pixelSize: 11; font.letterSpacing: 2 }
-            Rectangle { width: 1; height: 26; color: line; Layout.leftMargin: 14; Layout.rightMargin: 14 }
-            ActionButton { text: "⚙  " + win.centerLabel("settings"); onClicked: centerDialog.open() }
-            Text { text: "v0.9.0.2  /  " + studio.editionName; color: (win.light ? "#516477" : "#CBD6E8"); font.pixelSize: 11 }
+            Rectangle { visible: win.width >= 1250; width: 7; height: 7; radius: 4; color: win.playful ? "#FFB529" : (win.light ? "#AF7045" : "#DFA36F") }
+            Text { visible: win.width >= 1250; text: win.playful ? "IMPRESSÃO DE ALTA QUALIDADE" : "PRECISION PRINTING"; color: muted; font.pixelSize: win.playful ? 10 : 11; font.letterSpacing: win.playful ? 0.5 : 2 }
+            Rectangle { visible: win.width >= 1250; width: 1; height: 26; color: line; Layout.leftMargin: win.playful ? 5 : 14; Layout.rightMargin: win.playful ? 5 : 14 }
+            // v0.9.1.5 — Mesmo conjunto de comandos nos três temas.
+            // O ComboBox conserva os valores de tema reais e usa setTheme
+            // (QSettings), sem interferir com as licenças ou a exportação PDF.
+            LuxuryCombo {
+                id: headerThemeSelector
+                headerTheme: true
+                Layout.preferredWidth: win.width < 1250 ? 174 : 196
+                Layout.minimumWidth: 174
+                model: ["Midnight Sapphire", "Pearl Titanium", "Playful Studio"]
+                currentIndex: studio.theme === "Midnight Sapphire" ? 0 : (studio.theme === "Pearl Titanium" ? 1 : 2)
+                onActivated: studio.setTheme(currentText)
+            }
+            ActionButton {
+                id: headerSettingsButton
+                Layout.preferredWidth: 46
+                Layout.preferredHeight: 44
+                Layout.minimumWidth: 46
+                text: "⚙"
+                onClicked: { win.centerPage = 0; centerDialog.open() }
+                ToolTip.visible: hovered
+                ToolTip.text: win.centerLabel("settings")
+                Accessible.name: win.centerLabel("settings")
+            }
+            Text { text: "v0.9.1  /  " + studio.editionName; color: win.playful ? "#4266A2" : (win.light ? "#516477" : "#CBD6E8"); font.pixelSize: 10 }
+            Image { visible: win.width >= 1250; source: win.playful ? "../assets/playful/playful_icon.png" : "../assets/branding/postertile_icon.png"; Layout.preferredWidth: 51; Layout.preferredHeight: 51; fillMode: Image.PreserveAspectFit }
         }
         Rectangle { Layout.fillWidth: true; Layout.preferredHeight: 1; color: (win.light ? "#B4C1CA" : "#25334A") }
 
@@ -187,8 +327,8 @@ ApplicationWindow {
             Layout.fillWidth: true; Layout.fillHeight: true; spacing: 18
             // Left workspace
             Rectangle {
-                Layout.preferredWidth: 356; Layout.fillHeight: true
-                color: (win.light ? "#D5DCE0" : "#101B2D"); radius: 20; border.color: (win.light ? "#B3BEC7" : "#2A3A50")
+                Layout.preferredWidth: win.playful ? (win.width < 1270 ? 300 : (win.width < 1450 ? 335 : 365)) : 356; Layout.fillHeight: true
+                color: win.playful ? "#FFFFFF" : (win.light ? "#D5DCE0" : "#101B2D"); radius: win.playful ? 24 : 20; border.color: win.playful ? "#D0E5FC" : (win.light ? "#B3BEC7" : "#2A3A50")
                 Flickable {
                     anchors.fill: parent
                     anchors.margins: 10
@@ -213,10 +353,12 @@ ApplicationWindow {
                     x: 12; y: 12
                     width: parent.width - 32
                     spacing: 16
-                    Caption { text: win.t("01  /  CONFIGURAÇÃO") }
-                    Text { text: win.t("Cria sem limites."); color: ink; font.pixelSize: 24; font.family: "Georgia" }
+                    Caption { visible: !win.playful; text: win.t("01  /  CONFIGURAÇÃO") }
+                    PlayfulSection { visible: win.playful; title: win.t("01  /  CONFIGURAÇÃO"); symbol: "✦"; accent: "#F3A411" }
+                    Text { text: win.t("Cria sem limites."); color: ink; font.pixelSize: 24; font.family: win.playful ? "Segoe UI" : "Georgia"; font.weight: win.playful ? Font.Bold : Font.Normal }
                     Text { text: win.t("Precisão profissional em cada folha."); color: muted; font.pixelSize: 12 }
-                    Caption { text: win.t("02  /  ORIGEM DO PROJETO") }
+                    Caption { visible: !win.playful; text: win.t("02  /  ORIGEM DO PROJETO") }
+                    PlayfulSection { visible: win.playful; title: win.t("02  /  ORIGEM DO PROJETO"); symbol: "▧"; accent: "#1689ED" }
                     RowLayout {
                         Layout.fillWidth: true; spacing: 8
                         ActionButton { Layout.fillWidth: true; text: "▧  " + win.t("IMAGEM"); primary: studio.sourceMode === "image"; onClicked: studio.chooseImage() }
@@ -228,7 +370,8 @@ ApplicationWindow {
                     ActionButton { visible: studio.sourceMode === "text"; Layout.fillWidth: true; text: win.t("EDITAR TEXTO"); onClicked: studio.createText() }
                      Text { text: studio.filename; color: (win.light ? "#52667B" : "#B9C7DC"); font.pixelSize: 11; elide: Text.ElideMiddle; Layout.fillWidth: true }
                     Rectangle { Layout.fillWidth: true; height: 1; color: line }
-                    Caption { text: win.t("03  /  FORMATO FINAL") }
+                    Caption { visible: !win.playful; text: win.t("03  /  FORMATO FINAL") }
+                    PlayfulSection { visible: win.playful; title: win.t("03  /  FORMATO FINAL"); symbol: "⌗"; accent: "#F3668A" }
                     LuxuryCombo {
                         id: format
                         Layout.fillWidth: true
@@ -250,7 +393,7 @@ ApplicationWindow {
                     }
                     Rectangle {
                         Layout.fillWidth: true; height: 56; radius: 11
-                        color: (win.light ? "#CBD7DD" : "#192C43"); border.color: (win.light ? "#A7B5C0" : "#314761")
+                        color: win.playful ? "#E7F9F7" : (win.light ? "#CBD7DD" : "#192C43"); border.color: win.playful ? "#B6EBE1" : (win.light ? "#A7B5C0" : "#314761")
                         RowLayout {
                             anchors.fill: parent; anchors.margins: 13; spacing: 7
                             Text { text: "◇"; color: gold; font.pixelSize: 25 }
@@ -324,7 +467,8 @@ ApplicationWindow {
                         }
                     }
                     Rectangle { Layout.fillWidth: true; height: 1; color: line }
-                    Caption { text: win.t("04  /  PAPEL E IMPRESSÃO") }
+                    Caption { visible: !win.playful; text: win.t("04  /  PAPEL E IMPRESSÃO") }
+                    PlayfulSection { visible: win.playful; title: win.t("04  /  PAPEL E IMPRESSÃO"); symbol: "▤"; accent: "#8F66D9" }
                     ColumnLayout {
                         visible: studio.a3TwoEnabled
                         Layout.fillWidth: true
@@ -399,13 +543,13 @@ ApplicationWindow {
                                 Layout.fillWidth: true
                                 implicitHeight: 40
                                 radius: 9
-                                color: selected ? (win.light ? "#C39A78" : "#A97045") : (win.light ? "#D7DFE3" : "#15283D")
+                                color: win.playful ? (selected ? "#1B88ED" : "#FFFFFF") : (selected ? (win.light ? "#C39A78" : "#A97045") : (win.light ? "#D7DFE3" : "#15283D"))
                                 border.color: selected ? gold : line
                                 Text {
                                     anchors.centerIn: parent
                                     text: modelData
                                     font.pixelSize: 13; font.bold: true
-                                    color: selected ? (win.light ? "#1A2B3D" : "#091525") : ink
+                                    color: win.playful ? (selected ? "#FFFFFF" : ink) : (selected ? (win.light ? "#1A2B3D" : "#091525") : ink)
                                 }
                                 MouseArea {
                                     anchors.fill: parent; cursorShape: Qt.PointingHandCursor
@@ -471,7 +615,7 @@ ApplicationWindow {
                 Rectangle {
                     anchors.left: parent.left; anchors.right: parent.right; anchors.bottom: parent.bottom
                     anchors.margins: 10; height: 76; radius: 13
-                    color: (win.light ? "#D5DCE0" : "#101B2D")
+                    color: win.playful ? "#FFFFFF" : (win.light ? "#D5DCE0" : "#101B2D")
                     ColumnLayout {
                         anchors.fill: parent; spacing: 4
                         ActionButton { Layout.fillWidth: true; Layout.preferredHeight: 52; primary: true; text: win.t("EXPORTAR PDF  ↗"); onClicked: { applyConfig(); studio.export() } }
@@ -481,14 +625,18 @@ ApplicationWindow {
             }
             // Main stage
             Rectangle {
-                Layout.fillWidth: true; Layout.fillHeight: true; color: (win.light ? "#D5DCE0" : "#101C2C"); radius: 20; border.color: (win.light ? "#ACBAC4" : "#2A3B50")
+                Layout.fillWidth: true; Layout.fillHeight: true; color: win.playful ? "#FFFFFF" : (win.light ? "#D5DCE0" : "#101C2C"); radius: win.playful ? 24 : 20; border.color: win.playful ? "#D3E7FC" : (win.light ? "#ACBAC4" : "#2A3B50")
                 ColumnLayout {
                     anchors.fill: parent; anchors.margins: 20; spacing: 12
                     RowLayout {
                         Layout.fillWidth: true
                         ColumnLayout {
                             Caption { text: win.t("ATELIER  /  LIVE CANVAS") }
-                            Text { text: win.t("O teu projeto, em grande."); color: ink; font.family: "Georgia"; font.pixelSize: 23 }
+                            RowLayout {
+                                spacing: 8
+                                Text { text: win.t("O teu projeto, em grande."); color: ink; font.family: win.playful ? "Segoe UI" : "Georgia"; font.weight: win.playful ? Font.Bold : Font.Normal; font.pixelSize: win.playful ? (win.width < 1270 ? 20 : 25) : 23 }
+                                Text { visible: win.playful; text: "✦"; color: "#F8B821"; font.pixelSize: 22 }
+                            }
                         }
                         Item { Layout.fillWidth: true }
                         ActionButton { text: perspective ? win.t("◇   VISTA PLANA") : win.t("◇   PERSPETIVA"); onClicked: perspective=!perspective }
@@ -499,19 +647,33 @@ ApplicationWindow {
                         id: canvasBox
                         Layout.fillWidth: true; Layout.fillHeight: true
                         radius: 16; clip: true
-                        color: (win.light ? "#E1E6E8" : "#0B1422"); border.color: (win.light ? "#A5B4C1" : "#24364A")
-                        // Subtle stage glow
-                        Rectangle { width: parent.width*.80; height: parent.height*.75; anchors.centerIn: parent; radius: width/2; color: (win.light ? "#CFDBE1" : "#152C46"); opacity: .5 }
+                        color: win.playful ? "#F5FAFF" : (win.light ? "#E1E6E8" : "#0B1422"); border.color: win.playful ? "#D5E8FC" : (win.light ? "#A5B4C1" : "#24364A")
+                        // Pastel glow + corner stickers; these never enter PDF exports.
+                        Rectangle { width: parent.width*.80; height: parent.height*.75; anchors.centerIn: parent; radius: width/2; color: win.playful ? "#CEE9FF" : (win.light ? "#CFDBE1" : "#152C46"); opacity: .5 }
+                        Text {
+                            visible: win.playful; anchors.right: parent.right; anchors.top: parent.top
+                            anchors.rightMargin: 21; anchors.topMargin: 54
+                            text: "★"; color: "#FFD250"; font.pixelSize: 31
+                            rotation: 15
+                        }
+                        Text {
+                            visible: win.playful; anchors.left: parent.left; anchors.bottom: parent.bottom
+                            anchors.leftMargin: 13; anchors.bottomMargin: 54
+                            text: "✦"; color: "#46C7C0"; font.pixelSize: 25
+                        }
                         Item {
                             id: stage
-                            width: Math.min(canvasBox.width*0.78,canvasBox.height*0.80*(studio.previewRatio))
-                            height: Math.min(canvasBox.height*0.78,canvasBox.width*0.78*(1/Math.max(0.01,studio.previewRatio)))
+                            width: Math.min(canvasBox.width*(win.playful ? 0.90 : 0.78),
+                                            canvasBox.height*0.80*(win.playfulDemo ? 1.75 : studio.previewRatio))
+                            height: Math.min(canvasBox.height*0.78,
+                                             canvasBox.width*(win.playful ? 0.90 : 0.78)*
+                                             (1/Math.max(0.01, win.playfulDemo ? 1.75 : studio.previewRatio)))
                             anchors.centerIn: parent
                             scale: tileZoom
-                            rotation: perspective ? -2.5 : 0
+                            rotation: perspective ? (win.playful ? -3.0 : -2.5) : 0
                             Behavior on rotation { NumberAnimation { duration: 350; easing.type: Easing.OutCubic } }
                             Rectangle { anchors.fill: parent; anchors.leftMargin: 11; anchors.topMargin: 14; radius: 6; color: (win.light ? "#C4D0D8" : "#03070F"); opacity: .78 }
-                            Rectangle { anchors.fill: parent; color: (win.light ? "#CED6DB" : "#121A27"); border.color: (win.light ? "#6D7E8D" : "#566D87"); border.width: 1; radius: 5 }
+                            Rectangle { anchors.fill: parent; color: win.playful ? "#FFFFFF" : (win.light ? "#CED6DB" : "#121A27"); border.color: win.playful ? "#C7DFF9" : (win.light ? "#6D7E8D" : "#566D87"); border.width: 1; radius: 5 }
                             Image {
                                 id: artwork
                                 anchors.fill: parent; anchors.margins: 3
@@ -520,8 +682,16 @@ ApplicationWindow {
                                 cache: false; asynchronous: true
                                 visible: studio.imageUrl.length>0
                             }
+                            // The dashboard illustration is UI-only and never passed to export_pdf.
+                            Image {
+                                anchors.fill: parent; anchors.margins: 4
+                                source: "../assets/playful/astronaut_demo.png"
+                                fillMode: Image.PreserveAspectCrop
+                                smooth: true
+                                visible: win.playfulDemo
+                            }
                             Text {
-                                visible: studio.imageUrl.length===0
+                                visible: studio.imageUrl.length===0 && !win.playful
                                 anchors.centerIn: parent
                                 text: win.t("＋\n\nIMPORTA A TUA IMAGEM\nPARA COMEÇAR")
                                 font.pixelSize: 15; font.letterSpacing: 2
@@ -529,17 +699,17 @@ ApplicationWindow {
                             }
                             Repeater {
                                 model: Math.max(0,studio.columns-1)
-                                Rectangle { x: (index+1)*stage.width/studio.columns; y: 0; height: stage.height; width: 1; color: (win.light ? "#B97543" : "#E9A66B"); opacity: .75 }
+                                Rectangle { x: (index+1)*stage.width/studio.columns; y: 0; height: stage.height; width: 1; color: win.playful ? "#F28B55" : (win.light ? "#B97543" : "#E9A66B"); opacity: .73 }
                             }
                             Repeater {
                                 model: Math.max(0,studio.rows-1)
-                                Rectangle { y: (index+1)*stage.height/studio.rows; x: 0; width: stage.width; height: 1; color: (win.light ? "#B97543" : "#E9A66B"); opacity: .75 }
+                                Rectangle { y: (index+1)*stage.height/studio.rows; x: 0; width: stage.width; height: 1; color: win.playful ? "#F28B55" : (win.light ? "#B97543" : "#E9A66B"); opacity: .73 }
                             }
                         }
                         Rectangle {
                             anchors.left: parent.left; anchors.top: parent.top; anchors.margins: 20
-                            color: (win.light ? "#CBD7DF" : "#172940"); radius: 9; width: labelPreview.width+24; height: 32
-                            Text { id: labelPreview; anchors.centerIn: parent; text: win.t("●  VISTA DE MONTAGEM"); color: (win.light ? "#50667A" : "#AFC2DD"); font.pixelSize: 10; font.letterSpacing: 1.5 }
+                            color: win.playful ? "#E2F1FF" : (win.light ? "#CBD7DF" : "#172940"); radius: 12; width: labelPreview.width+24; height: 32
+                            Text { id: labelPreview; anchors.centerIn: parent; text: win.playfulDemo ? "▦  " + win.playfulCopy("demo") : win.t("●  VISTA DE MONTAGEM"); color: win.playful ? "#1766BF" : (win.light ? "#50667A" : "#AFC2DD"); font.pixelSize: 10; font.letterSpacing: 1.5 }
                         }
                         Text {
                             anchors.bottom: parent.bottom; anchors.horizontalCenter: parent.horizontalCenter; anchors.bottomMargin: 18
@@ -547,16 +717,125 @@ ApplicationWindow {
                             color: (win.light ? "#667A8F" : "#8093AC"); font.pixelSize: 11
                         }
                     }
-                    RowLayout {
-                        Layout.fillWidth: true; Layout.preferredHeight: 56
-                        Text { text: "◈"; color: gold; font.pixelSize: 23 }
-                        ColumnLayout {
-                            spacing: 4
-                            Text { text: win.t("PROFESSIONAL OUTPUT"); color: (win.light ? "#273A50" : "#EDF1FC"); font.pixelSize: 11; font.weight: Font.DemiBold; font.letterSpacing: 1.5 }
-                            Text { text: studio.status.replace("PDF pronto:",win.t("PDF pronto:")); color: (win.light ? "#637689" : "#8EA2BC"); font.pixelSize: 11; elide: Text.ElideMiddle; Layout.maximumWidth: 670 }
+                    Rectangle {
+                        Layout.fillWidth: true
+                        Layout.preferredHeight: win.playful ? 70 : 56
+                        radius: win.playful ? 17 : 0
+                        color: win.playful ? "#FFFAF3" : "transparent"
+                        border.color: win.playful ? "#FFE8CC" : "transparent"
+                        RowLayout {
+                            anchors.fill: parent
+                            anchors.leftMargin: win.playful ? 13 : 0
+                            anchors.rightMargin: win.playful ? 13 : 0
+                            spacing: 11
+                            Rectangle {
+                                visible: win.playful
+                                Layout.preferredWidth: 42; Layout.preferredHeight: 42
+                                radius: 14; color: "#FFE8BA"
+                                Text { anchors.centerIn: parent; text: "★"; color: "#F7942F"; font.pixelSize: 22 }
+                            }
+                            Text { visible: !win.playful; text: "◈"; color: gold; font.pixelSize: 23 }
+                            ColumnLayout {
+                                Layout.fillWidth: true; spacing: 4
+                                Text { text: win.playful ? win.playfulCopy("output") : win.t("PROFESSIONAL OUTPUT"); color: win.playful ? "#103676" : (win.light ? "#273A50" : "#EDF1FC"); font.pixelSize: 11; font.weight: Font.DemiBold; font.letterSpacing: 1.2 }
+                                Text {
+                                    Layout.fillWidth: true
+                                    text: win.playfulDemo ? win.playfulCopy("status") : studio.status.replace("PDF pronto:",win.t("PDF pronto:"))
+                                    color: win.playful ? "#5875A3" : (win.light ? "#637689" : "#8EA2BC")
+                                    font.pixelSize: 11; elide: Text.ElideMiddle
+                                }
+                            }
+                            Rectangle {
+                                visible: win.playful
+                                Layout.preferredWidth: 116; Layout.preferredHeight: 42
+                                color: "#FFF0DF"; radius: 12
+                                border.color: "#FFDFC1"
+                                Text {
+                                    anchors.centerIn: parent
+                                    text: win.playfulDemo ? win.playfulCopy("inspire") : studio.pageCount+" "+win.t("PÁGINAS")
+                                    color: "#E56A30"; font.pixelSize: 12; font.bold: true
+                                }
+                            }
+                            Text {
+                                visible: !win.playful
+                                text: studio.pageCount+" "+win.t("PÁGINAS")
+                                color: win.light ? "#AD7044" : "#E8AF7E"
+                                font.pixelSize: 13; font.weight: Font.DemiBold
+                            }
                         }
-                        Item { Layout.fillWidth: true }
-                        Text { text: studio.pageCount+" "+win.t("PÁGINAS"); color: (win.light ? "#AD7044" : "#E8AF7E"); font.pixelSize: 13; font.weight: Font.DemiBold }
+                    }
+                }
+            }
+            // v0.9.1.2: o painel direito adapta-se e não desaparece ao redimensionar.
+            // Em altura reduzida, o conteúdo pode ser deslocado com a roda do rato.
+            Rectangle {
+                visible: win.playful
+                Layout.preferredWidth: visible ? (win.width < 1270 ? 205 : (win.width < 1450 ? 216 : 236)) : 0
+                Layout.minimumWidth: visible ? 192 : 0
+                Layout.maximumWidth: visible ? 236 : 0
+                Layout.fillHeight: true
+                radius: 23
+                color: "#FFFFFF"
+                border.color: "#CAE2FA"
+                clip: true
+                Flickable {
+                    id: playfulHelpScroll
+                    anchors.fill: parent
+                    anchors.margins: win.width < 1270 ? 10 : 12
+                    clip: true
+                    contentWidth: width
+                    contentHeight: playfulHelpContent.height
+                    boundsBehavior: Flickable.StopAtBounds
+                    ScrollBar.vertical: ScrollBar {
+                        policy: ScrollBar.AsNeeded
+                        width: 6
+                    }
+                    ColumnLayout {
+                        id: playfulHelpContent
+                        // Reserva 10 px para a barra de deslocação.
+                        width: Math.max(0, playfulHelpScroll.width - 10)
+                        height: Math.max(implicitHeight, playfulHelpScroll.height)
+                        spacing: win.width < 1270 ? 7 : 10
+                    RowLayout {
+                        Layout.fillWidth: true; Layout.minimumWidth: 0; spacing: 6
+                        Rectangle {
+                            Layout.preferredWidth: win.width < 1270 ? 28 : 34
+                            Layout.preferredHeight: win.width < 1270 ? 28 : 34
+                            radius: 11; color: "#FFF0B7"
+                            Text { anchors.centerIn: parent; text: "✦"; color: "#EBA32B"; font.pixelSize: 20 }
+                        }
+                        Text {
+                            Layout.fillWidth: true
+                            Layout.minimumWidth: 0
+                            text: win.playfulCopy("header")
+                            color: "#1C71D8"; font.pixelSize: 12; font.bold: true
+                            wrapMode: Text.WordWrap
+                        }
+                    }
+                    Text {
+                        Layout.fillWidth: true; Layout.minimumWidth: 0
+                        wrapMode: Text.WordWrap
+                        text: win.playfulCopy("intro")
+                        color: "#103676"; font.pixelSize: win.width < 1270 ? 12 : (win.width < 1450 ? 15 : 17); font.bold: true
+                        lineHeight: 1.12
+                    }
+                    Rectangle { Layout.fillWidth: true; Layout.preferredHeight: 1; color: "#D5E9FB" }
+                    PlayfulBenefit { benefit: win.playfulCopy("a"); accent: "#28C5A9" }
+                    PlayfulBenefit { benefit: win.playfulCopy("b"); accent: "#FFBD36" }
+                    PlayfulBenefit { benefit: win.playfulCopy("c"); accent: "#9671EA" }
+                    PlayfulBenefit { benefit: win.playfulCopy("d"); accent: "#FF6285" }
+                    Item { Layout.fillHeight: true; Layout.minimumHeight: 0 }
+                    Image {
+                        Layout.fillWidth: true
+                        Layout.preferredHeight: win.width < 1270 ? 170 : (win.height < 850 ? 205 : 255)
+                        Layout.minimumHeight: 125
+                        Layout.maximumHeight: 355
+                        source: "../assets/playful/creative_helper.png"
+                        fillMode: Image.PreserveAspectFit
+                        verticalAlignment: Image.AlignBottom
+                        smooth: true
+                        asynchronous: true
+                    }
                     }
                 }
             }
@@ -565,7 +844,7 @@ ApplicationWindow {
             Layout.fillWidth: true; Layout.preferredHeight: 18
             Text { text: "NONIVERUS   /   SOFTWARE WITHOUT STRINGS."; color: (win.light ? "#687B8E" : "#6D809B"); font.pixelSize: 10; font.letterSpacing: 1 }
             Item { Layout.fillWidth: true }
-            Text { text: "LUXURY STUDIO  ·  EDITION 06"; color: (win.light ? "#687A8C" : "#8496AC"); font.pixelSize: 10; font.letterSpacing: 1 }
+            Text { text: win.playful ? "LUXURY STUDIO  ·  PLAYFUL STUDIO  ·  " + studio.editionName : "LUXURY STUDIO  ·  EDITION 06"; color: win.playful ? "#496FB0" : (win.light ? "#687A8C" : "#8496AC"); font.pixelSize: 10; font.letterSpacing: 1 }
         }
     }
     // NONIVERUS Control Center — painel nativo, sem cabeçalho/rodapé de Dialog
@@ -581,7 +860,7 @@ ApplicationWindow {
         height: win.height
         padding: 0
         background: Rectangle {
-            color: win.light ? "#E7E3DB" : "#101A2B"
+            color: win.playful ? "#F3FAFF" : (win.light ? "#E7E3DB" : "#101A2B")
             border.color: win.line
             border.width: 1
         }
@@ -590,7 +869,7 @@ ApplicationWindow {
             spacing: 0
             Rectangle {
                 Layout.fillWidth: true; Layout.preferredHeight: 115
-                color: win.light ? "#DBE0E2" : "#14233A"
+                color: win.playful ? "#DFEEFF" : (win.light ? "#DBE0E2" : "#14233A")
                 ColumnLayout {
                     anchors.fill: parent; anchors.margins: 25; spacing: 8
                     RowLayout {
@@ -610,7 +889,7 @@ ApplicationWindow {
                     Layout.minimumWidth: 195
                     Layout.fillHeight: true
                     clip: true
-                    color: win.light ? "#D2DADE" : "#112035"
+                    color: win.playful ? "#E4F4FF" : (win.light ? "#D2DADE" : "#112035")
                     ColumnLayout {
                         anchors.fill: parent; anchors.margins: 15; spacing: 9
                         CenterNavButton { Layout.fillWidth: true; text: "⚙  " + win.centerLabel("settings"); primary: win.centerPage === 0; onClicked: win.centerPage = 0 }
@@ -621,7 +900,7 @@ ApplicationWindow {
                         Text {
                             Layout.fillWidth: true
                             Layout.minimumWidth: 0
-                            text: "v0.9.0.2  /  " + studio.editionName
+                            text: "v0.9.1  /  " + studio.editionName
                             color: win.light ? "#63758B" : "#899BB7"
                             font.pixelSize: 10
                             font.weight: Font.DemiBold
@@ -634,7 +913,7 @@ ApplicationWindow {
                 }
                 Rectangle {
                     Layout.fillWidth: true; Layout.fillHeight: true
-                    color: win.light ? "#E7E3DB" : "#101A2B"
+                    color: win.playful ? "#F3FAFF" : (win.light ? "#E7E3DB" : "#101A2B")
                     Flickable {
                         anchors.fill: parent; anchors.margins: 28
                         contentWidth: width
@@ -653,8 +932,8 @@ ApplicationWindow {
                                 Caption { text: win.controlLabel("theme") }
                                 LuxuryCombo {
                                     Layout.fillWidth: true
-                                    model: ["Midnight Sapphire", "Pearl Titanium"]
-                                    Component.onCompleted: currentIndex = (studio.theme === "Pearl Titanium" ? 1 : 0)
+                                    model: ["Midnight Sapphire", "Pearl Titanium", "Playful Studio"]
+                                    currentIndex: studio.theme === "Midnight Sapphire" ? 0 : (studio.theme === "Pearl Titanium" ? 1 : 2)
                                     onActivated: studio.setTheme(currentText)
                                 }
                                 Caption { text: win.controlLabel("language") }
@@ -720,7 +999,7 @@ ApplicationWindow {
                                 Text { text: win.aboutText("product"); color: win.ink; font.family: "Georgia"; font.pixelSize: 22 }
                                 Rectangle { Layout.fillWidth: true; Layout.preferredHeight: 1; color: win.line }
                                 Caption { text: win.aboutText("version") }
-                                Text { text: "v0.9.0.2  /  " + studio.editionName; color: win.ink; font.pixelSize: 14 }
+                                Text { text: "v0.9.1  /  " + studio.editionName; color: win.ink; font.pixelSize: 14 }
                                 Caption { text: win.aboutText("description") }
                                 Text { Layout.fillWidth: true; wrapMode: Text.WordWrap; text: win.centerLabel("aboutInfo"); color: win.ink; font.pixelSize: 13 }
                                 Rectangle { Layout.fillWidth: true; Layout.preferredHeight: 1; color: win.line }

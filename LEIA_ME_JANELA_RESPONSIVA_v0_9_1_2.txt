@@ -1,0 +1,58 @@
+NONIVERUS PosterTile Luxury Studio — Playful Studio DEV v0.9.1.2
+HOTFIX: JANELA MAXIMIZADA E PAINEL DIREITO RESPONSIVO
+
+PRÉ-REQUISITO
+- Projeto DEV com Playful Studio v0.9.1 e polimento v0.9.1.1 já aplicado.
+- NÃO aplicar diretamente na pasta Git nem na edição instalada.
+- NÃO reinstalar a aplicação, NÃO regenerar a chave Ed25519.
+
+MOTIVO
+O ficheiro QML ocultava completamente o painel "Ideias em grande"
+quando win.width < 1430 ou win.height < 840. Após reduzir a janela, o
+painel desaparecia. A janela também não iniciava maximizada.
+
+CORREÇÃO
+- Ao arrancar, a janela nativa é maximizada com showMaximized().
+  Não se usa ecrã inteiro ou janela sem moldura, portanto a barra de
+  tarefas do Windows e os botões minimizar/restaurar permanecem.
+- O painel direito fica sempre visível no tema Playful Studio.
+- A largura da barra lateral e do painel direito diminui progressivamente
+  em janelas estreitas, sem ocultar o painel.
+- O conteúdo do painel direito tem deslocação vertical quando não cabe.
+- A personagem mantém-se acessível ao descer o painel.
+- Não altera a exportação, licença, Python, instaladores, nem edições Owner/Preview.
+
+COMANDOS POWERSHELL
+$zip = "$env:USERPROFILE\Downloads\NONIVERUS_PosterTile_v0_9_1_2_Janela_Responsiva_DEV.zip"
+$pasta = "C:\NONIVERUS\HOTFIX_RESPONSIVO_0912"
+Expand-Archive -LiteralPath $zip -DestinationPath $pasta -Force
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File "$pasta\APLICAR_JANELA_RESPONSIVA_0912.ps1"
+
+TESTE DE EXECUÇÃO
+cd C:\NONIVERUS\NONIVERUS_POSTERTILE_DEV
+.\.venv\Scripts\python.exe main.py
+
+VERIFICAR
+1. A aplicação abre maximizada, deixando a barra de tarefas visível.
+2. O botão Minimizar funciona; ao restaurar regressa ao estado maximizado.
+3. O botão Restaurar permite reduzir e redimensionar a janela.
+4. A barra "Ideias em grande" continua presente ao reduzir a janela.
+5. O painel continua presente ao maximizar de novo.
+6. À altura mais pequena, rodar a roda do rato sobre o painel direito
+   permite consultar os textos e a personagem.
+7. Alternar Pearl Titanium e Midnight Sapphire não apresenta o painel Playful.
+8. Se houver incompatibilidade, o script para SEM substituir Main.qml.
+
+BACKUP
+Antes da alteração é criada cópia de Main.qml em:
+%LOCALAPPDATA%\NONIVERUS\PosterTile\build_backups\Responsive_v0912_*
+
+NOTAS
+- Continua a aparecer "v0.9.1 / DEV" na barra de título: trata-se
+  apenas de um hotfix QML da v0.9.1, sem recompilar o EXE.
+- Testes realizados: aplicação do patch, execução repetida, proteção
+  contra conflito, finais de linha CRLF e verificação estática de chaves
+  delimitadoras do QML. O QML só pode ser validado visualmente no Windows.
+- A maximização respeita a área de trabalho nas configurações normais
+  do Windows. Monitores com escala/DPI ou várias barras de tarefas devem
+  ser testados no equipamento real.

@@ -1,0 +1,45 @@
+NONIVERUS PosterTile v0.9.1 — Playful Studio, CORRECAO V3
+=========================================================
+
+Este pacote SUBSTITUI os dois ZIPs Playful v0.9.1 anteriores.
+Utiliza apenas C:\NONIVERUS\NONIVERUS_POSTERTILE_DEV.
+
+O que mudou:
+- O main.py deixou de depender de blocos literais de difflib.
+  Sao identificadas as duas instrucoes da escolha do tema,
+  e a paleta do editor, preservando as cores dos temas existentes.
+- Os scripts Inno Setup apenas alteram tres campos de versao.
+  AppId e [Code] de atualizacao nao sao alterados.
+- Aplica ui/Main.qml, imagens de exemplo da dashboard e recursos.
+- Verificacao SEM ESCRITA antes da aplicacao.
+- Guarda copia dos ficheiros originais em %%LOCALAPPDATA%%
+- Nao utiliza chaves privadas nem modifica licencas.
+
+POWERSHELL:
+$zip = "$env:USERPROFILE\Downloads\NONIVERUS_PosterTile_v0_9_1_Playful_Studio_CORRECAO_V3_DEV.zip"
+$pasta = "C:\NONIVERUS\HOTFIX_PLAYFUL_091_V3"
+Expand-Archive -LiteralPath $zip -DestinationPath $pasta -Force
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File "$pasta\APLICAR_PLAYFUL_STUDIO_v091.ps1"
+
+Se a verificacao indicar SUCESSO:
+cd C:\NONIVERUS\NONIVERUS_POSTERTILE_DEV
+.\.venv\Scripts\python.exe main.py
+
+Abre Definicoes -> Tema visual -> Playful Studio.
+Valida visualmente, sem compilar por enquanto.
+
+SE O SCRIPT VOLTAR A PARAR
+Nao sobrescrevas manualmente main.py. Em vez disso, envia
+C:\NONIVERUS\NONIVERUS_POSTERTILE_DEV\main.py (sem chaves privadas)
+ou executa este diagnostico no PowerShell e envia as linhas:
+
+Select-String -Path "C:\NONIVERUS\NONIVERUS_POSTERTILE_DEV\main.py" `
+  -Pattern 'self\._theme','def setTheme','if theme not in','light=self\._theme','bronze=' `
+  -Context 1,6
+
+NAO executar license_authority.py init.
+NAO recompilar edicoes antes do teste visual no Windows.
+
+LIMITACOES:
+A aparencia em Qt Quick no Windows necessita teste visual real.
+Não e possivel prometer alinhamento pixel a pixel com a arte do mockup.

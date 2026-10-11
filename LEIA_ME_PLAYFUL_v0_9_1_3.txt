@@ -1,0 +1,68 @@
+NONIVERUS POSTERTILE — PLAYFUL STUDIO v0.9.1.3 (DEV)
+====================================================
+
+Objetivo
+--------
+1. Tornar o painel lateral direito «Ideias em grande» legível em janelas
+   restauradas e mais estreitas, sem o ocultar.
+2. Reduzir os avisos repetidos do Qt Quick Controls sobre os controlos
+   personalizados (ComboBox: indicator/contentItem), selecionando
+   explicitamente o estilo Qt Quick Controls "Basic".
+3. Preservar a dashboard Playful Studio aprovada, a barra de tarefas Windows,
+   o arranque maximizado, a edição Owner e a Private Preview.
+
+O que é alterado
+----------------
+- C:\NONIVERUS\NONIVERUS_POSTERTILE_DEV\ui\Main.qml
+- C:\NONIVERUS\NONIVERUS_POSTERTILE_DEV\main.py
+
+NÃO são alterados:
+- Chaves de assinatura ou ficheiros de licença
+- Código do motor PDF, calibração, perfis ou composição
+- Scripts do Inno Setup e builds Windows
+- Código do Git na pasta original
+
+A escolha do estilo Basic afeta os três temas na mesma aplicação.
+Os controlos personalizados mantêm as próprias cores e geometrias.
+
+Aplicação
+---------
+1. Descarrega este ZIP para a pasta Transferências.
+2. No PowerShell:
+
+$zip = "$env:USERPROFILE\Downloads\NONIVERUS_PosterTile_v0_9_1_3_Painel_Compacto_QtBasic_DEV.zip"
+$pasta = "C:\NONIVERUS\HOTFIX_PLAYFUL_0913"
+Expand-Archive -LiteralPath $zip -DestinationPath $pasta -Force
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File "$pasta\APLICAR_PLAYFUL_0913.ps1"
+
+O script realiza uma simulação e só depois, se todos os pontos forem
+compatíveis, cria backup e aplica as alterações. Se algo não coincidir,
+para sem substituir ficheiros.
+
+Backups: %LOCALAPPDATA%\NONIVERUS\PosterTile\build_backups\PlayfulResponsive_v0913_*
+
+Testar
+------
+cd C:\NONIVERUS\NONIVERUS_POSTERTILE_DEV
+.\.venv\Scripts\python.exe main.py
+
+A. Abre maximizada e deixa a barra de tarefas Windows acessível.
+B. Restaura/reduz a janela: «Ideias em grande» continua visível,
+   sem cortar texto na horizontal. Pode ter deslocação vertical.
+C. Volta a maximizar: o painel recupera a apresentação ampla.
+D. Abre as listas de seleção e o Control Center para observar
+   eventuais avisos Qt na consola.
+E. Confirma os temas Midnight Sapphire e Pearl Titanium.
+F. Confirma que os teus documentos não mostram a ilustração de demonstração
+   na exportação PDF.
+
+Notas
+-----
+- A versão visível no cabeçalho continua a ser v0.9.1 DEV. Este é o hotfix
+  de qualidade 0.9.1.3; só atualizaremos os EXE após validação.
+- Não voltes a executar license_authority.py init.
+- Não voltes a compilar os instaladores sem primeiro validar no Windows.
+- A execução QML/Qt no Windows não foi possível testar nesta máquina:
+  os testes realizados são ao patch, a sintaxe Python e a estrutura estática.
+
+NONIVERUS — Precision Before Promotion

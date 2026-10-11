@@ -135,10 +135,10 @@ end;
 
 def make_installer_script(edition, exe_name):
     label = "Owner" if edition == "owner" else "Private Preview"
-    setup_name = f"NONIVERUS_PosterTile_{'Owner' if edition == 'owner' else 'PrivatePreview'}_Setup_v0.9.0.2"
+    setup_name = f"NONIVERUS_PosterTile_{'Owner' if edition == 'owner' else 'PrivatePreview'}_Setup_v0.9.1"
     appid = APPIDS[edition]
     contents = f'''#define MyAppName "NONIVERUS PosterTile {label}"
-#define MyAppVersion "0.9.0.2"
+#define MyAppVersion "0.9.1"
 #define MyAppExeName "{exe_name}.exe"
 
 [Setup]
@@ -162,7 +162,7 @@ ArchitecturesAllowed=x64compatible
 ArchitecturesInstallIn64BitMode=x64compatible
 CloseApplications=yes
 RestartApplications=no
-VersionInfoVersion=0.9.0.2
+VersionInfoVersion=0.9.1
 VersionInfoCompany=NONIVERUS
 VersionInfoProductName={{#MyAppName}}
 VersionInfoProductVersion={{#MyAppVersion}}
